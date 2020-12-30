@@ -101,8 +101,20 @@ extern "C"
 #define PIN_WEIGHT_TEMP			 (49u)
 #define PIN_WEIGHT_DATA			 (53u)
 #define PIN_WEIGHT_CLK			 (6u)
-#define PIN_WEIGHT_PDWN	     (31u)
+#define PIN_WEIGHT_PDWN	     (7u)
 #define PIN_WEIGHT_SELECT       (50u)
+
+/*
+ * I2S Interfaces
+ */
+#define I2S_INTERFACES_COUNT 1
+
+#define I2S_DEVICE          1
+#define I2S_CLOCK_GENERATOR 3
+#define PIN_I2S_SD          (8u)
+#define PIN_I2S_SCK         (10u)
+#define PIN_I2S_FS          (11u)
+
 
 static const uint8_t WEIGHT_DATA = PIN_WEIGHT_DATA;
 static const uint8_t WEIGHT_CLK = PIN_WEIGHT_CLK;
@@ -176,7 +188,7 @@ static const uint8_t A13 = PIN_A13;
 // Other Analog Pins
 static const uint8_t DAC0          = PIN_A0; // or (24u) implications for cores/arduino/wiring_analog.c analogWrite()
 static const uint8_t AREF          = (35u);
-static const uint8_t BAT_VOLT      = (36u);
+static const uint8_t BAT_VOLT      = (34u);
 
 /*
  * SPI Interfaces

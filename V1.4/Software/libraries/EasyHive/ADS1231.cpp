@@ -67,10 +67,11 @@ int ADS1231::getValue(long& val)
         digitalWrite(pClk, HIGH);
         val = (val << 1) + digitalRead(pData);
         digitalWrite(pClk, LOW);
+        delay(1);
     }
 
     /* Accomodate for sign bit */
-    val = (val << 8) / 256;
+    // val = (val << 8) / 256;
 
     /* Force data pin low to catch rising edge on next read*/
     digitalWrite(pClk, HIGH);

@@ -38,24 +38,22 @@ uint8_t BER;
 
 void setup(void)
 {
-  play_rtttl(startup);
+  // play_rtttl(startup);
+  tone(BUZZER,3950);
+  delay(400);
+  noTone(BUZZER);
   tone(BUZZER,4000);
-  delay(100);
+  delay(380);
+  noTone(BUZZER);
+  tone(BUZZER,4080);
+  delay(370);
   noTone(BUZZER);
   
-  sodaq_wdt_safe_delay(5000);
+  // sodaq_wdt_safe_delay(1000);
 
 
   init_LEDs();
-  LEDs_red();
-  delay(1000);
-  LEDs_green();
-  delay(1000);
-  LEDs_blue();
-  delay(1000);
-  LEDs_off();
-
-  // init_RTC();
+  init_RTC();
   init_server_data();
   init_BoardID();
   init_Temp();
@@ -142,42 +140,50 @@ void loop(void)
   // start loadcellstuff
   digitalWrite(LC_ON, HIGH);
   digitalWrite(PDWN, HIGH);
+  // test delay; let LC-voltage settle...
+  // sodaq_wdt_safe_delay(5000);
 
   float temp_val = get_Temp();
   SerialUSB.print("Temp: ");
   SerialUSB.println(temp_val);
-  delay(1000);
 
 
   digitalWrite(SELECT, LOW);
-  //dummy weight measure for settlement
+  sodaq_wdt_safe_delay(150);
+  get_Weight();//dummy weight measure for settlement
+  sodaq_wdt_safe_delay(150);
   get_Weight();
-  get_Weight();
+  sodaq_wdt_safe_delay(150);
 
   float weight_val1 = get_Weight();
   SerialUSB.print("Weight: ");
   SerialUSB.println(weight_val1);
-  delay(500);
 
-  long weight_val_raw1 = get_Weight_raw();
-  SerialUSB.print("Weight Raw: ");
-  SerialUSB.println(weight_val_raw1, DEC);
-  delay(500);
+  // long weight_val_raw1 = get_Weight_raw();
+  // SerialUSB.print("Weight Raw: ");
+  // SerialUSB.println(weight_val_raw1, DEC);
 
   digitalWrite(SELECT, HIGH); // read the other side
-  delay(1000);
+  sodaq_wdt_safe_delay(150);
   //dummy weight measure for settlement
-  get_Weight_raw();
-  get_Weight_raw();
+  get_Weight2();
+  sodaq_wdt_safe_delay(150);
+  get_Weight2();
+  sodaq_wdt_safe_delay(150);
 
   float weight_val2 = get_Weight2();
   SerialUSB.print("Weight2: ");
   SerialUSB.println(weight_val2);
 
-  long weight_val_raw2 = get_Weight_raw();
-  SerialUSB.print("Weight Raw: ");
-  SerialUSB.println(weight_val_raw2, DEC);
-  delay(500);
+  // long weight_val_raw2 = get_Weight_raw();
+  // SerialUSB.print("Weight Raw: ");
+  // SerialUSB.println(weight_val_raw2, DEC);
+
+  //Stop LoadecellStuff
+  digitalWrite(LC_ON, LOW);
+  digitalWrite(SELECT, LOW);
+  digitalWrite(PDWN, LOW);
+
 
   // check Signal quality
   nbiot.getRSSIAndBER(&SIGNAL, &BER);
@@ -187,7 +193,7 @@ void loop(void)
   //read Time from rtc
   long epochtime = get_time();
 
-  // [FLOAT], [FLOAT], [FLOAT], [FLOAT], [INT8_T], [INTEGER], [LONG]
+  // [FLOAT], [FLOAT], [FLOAT], [FLOAT], [INT8_T], [INTEGER], [ULONG]
   // [WEIGHT1],[WEIGHT2],[TEMP],[VOLT],[SIGNALQUALITY],[BOARDID],[Package/EPOCH]
 
   safe_sens_value(weight_val1, weight_val2, temp_val, VOLT, SIGNAL, epochtime );
@@ -220,6 +226,7 @@ void loop(void)
         read_sens_value(&weight1, &weight2, &temp, &volt, &csq, &epoch, pointer_pos);
         String msg = String(weight1) + "," + String(weight2) + "," + String(temp) + "," + String(volt) + "," + String(csq) + "," + String(BoardID) + "," + String(epoch) ;
 
+        // if it's the first message:
         sendMessageThroughUDP(msg.c_str());
         // TODO: Was macht er denn falls Senden schiefläuft? Daten verwerfen?
       }
@@ -239,7 +246,6 @@ void loop(void)
 
     int pointer_pos = get_sens_pointer(0);
     read_sens_value(&weight1, &weight2, &temp, &volt, &csq, &pktnr, pointer_pos);
-    delay(100);
     SerialUSB.println("\n ");
     SerialUSB.print("Temp: ");
     SerialUSB.println(temp);
@@ -254,11 +260,12 @@ void loop(void)
     SerialUSB.print("package ");
     SerialUSB.println(pktnr);
   }
-  
-  digitalWrite(SELECT, LOW);
-  digitalWrite(LC_ON, LOW);
-  digitalWrite(PDWN, LOW);
 
+  //Stop LoadecellStuff
+  digitalWrite(LC_ON, LOW);
+  digitalWrite(SELECT, LOW);
+  digitalWrite(PDWN, LOW);
+ 
   // calculate sleeptime
   int sleeptime = datalogtime - (millis() - loopstarttime)/1000;
   SerialUSB.print("Sleeptime[s]:");

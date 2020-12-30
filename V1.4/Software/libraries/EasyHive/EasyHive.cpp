@@ -16,8 +16,6 @@
 #include "base64.h"
 #include <stdio.h>
 #include <RTCZero.h>
-#include <MemoryFree.h>
-#include <xxtea-lib.h>
 
 // songs for the buzzer system
 // d=16,o=5,b=250:3a7,4p,3a7,4p,3a7,4p,3b7,4p,3b7,4p
@@ -35,8 +33,7 @@ char* countdown3 = "8g#,f#,d6,2c#.6,16c#6,16d6,16c#6,16b,1c#6,2p";
 const char *key = "9Udj81*";
 
 // Set the BoardID variable
-//int BoardID = 1;
-int BoardID = 47;
+int BoardID = 1;
 
 // Set intervals for data logging and data sending [seconds] // due to watchdogtimer they result in multiples of 8
 int datasendtime =  15;
@@ -79,7 +76,7 @@ int calibration_weight = 2000;
 int calibration_weight2 = 1000;
 int tare_weight = 0;
 
-String inputString = "";      // a String to hold incoming data
+String inputString = "";         // a String to hold incoming data
 bool stringComplete = false;  // whether the string is complete
 bool played_bad = false; // to check if bad connection melody was played
 
@@ -88,7 +85,7 @@ bool played_bad = false; // to check if bad connection melody was played
 OneWire oneWire(ONE_WIRE_BUS);
 // Pass our oneWire reference to Dallas Temperature. 
 DallasTemperature sensors(&oneWire);
-// Weight ADS
+//Weight ADS
 ADS1231 adc(CLK_PIN,DATA_PIN);
 
 // Flash MEMORY ASSIGNMENT
@@ -149,7 +146,7 @@ void serialEvent(void) {
 
 void check_USB_in(void){
     if (stringComplete) {
-        //SerialUSB.println(inputString);
+        SerialUSB.println(inputString);
         // clear the string:
         inputString = "";
         stringComplete = false;
@@ -213,14 +210,14 @@ void init_server_data(void){
 	struct Serverdata serverbuffer = flash_server.read();
     
     if(serverbuffer.isSet == true){
-		//SerialUSB.println("server_data is set");
+		SerialUSB.println("server_data is set");
 		server = serverbuffer;
 	}
 	else{
-		//SerialUSB.println("server_data is not set - initializing with standard data"); 
+		SerialUSB.println("server_data is not set - initializing with standard data"); 
 	}
-	 //SerialUSB.println(server.ip);
-     //SerialUSB.println(server.port);
+	 SerialUSB.println(server.ip);
+     SerialUSB.println(server.port);
 }
 
 void init_BoardID(void){
@@ -231,13 +228,13 @@ void init_BoardID(void){
     if(boardset == true){
         // 
         BoardID = flash_boardid.read();
-        //SerialUSB.println("board_id is set");
-        //SerialUSB.println(BoardID);
+        SerialUSB.println("board_id is set");
+        SerialUSB.println(BoardID);
     }
     else{
-		//SerialUSB.println("BoardID is not set yet - setting it to standard");     
+		SerialUSB.println("BoardID is not set yet - setting it to standard");     
         BoardID = 1; 
-        //SerialUSB.println(BoardID);
+        SerialUSB.println(BoardID);
     }
 }
 
@@ -256,13 +253,13 @@ void initSleep()
 	if(timeset == true){ 
 		datasendtime = flash_sendtime.read();
 		datalogtime = flash_logtime.read();
-		//SerialUSB.println("time is set");
-		//SerialUSB.println(datalogtime);
-		//SerialUSB.println(datasendtime);
+		SerialUSB.println("time is set");
+		SerialUSB.println(datalogtime);
+		SerialUSB.println(datasendtime);
 	}
 	else{
-		//SerialUSB.println("Logtime is not set yet - setting it to standard");     
-		//SerialUSB.println(datalogtime);
+		SerialUSB.println("Logtime is not set yet - setting it to standard");     
+		SerialUSB.println(datalogtime);
 		SerialUSB.println(datasendtime);
 	}
 	/*
@@ -275,14 +272,14 @@ void initSleep()
 
 
 void init_Temp(void){
-    //SerialUSB.println("Dallas Temperature IC Control Library Demo");
+    SerialUSB.println("Dallas Temperature IC Control Library Demo");
     // Start up the library
     sensors.begin();
     return; 
 }
 
 void init_Weight(void){
-    //SerialUSB.println("Init ADS1232");
+    SerialUSB.println("Init ADS1232");
     pinMode(PDWN, OUTPUT);
     digitalWrite(PDWN, HIGH);
 
@@ -355,14 +352,14 @@ void get_Weight_calib(float* val_c, float* val_o, float* val_cw){
     }
 
     SerialUSB.print("Offset: ");
-    //SerialUSB.println(weight_offset);
-    //SerialUSB.print("Calibration: ");
-    //SerialUSB.println(weight_calib);
-    //SerialUSB.print("Calibration Weight: ");
-    //SerialUSB.println(calibration_weight);
+    SerialUSB.println(weight_offset);
+    SerialUSB.print("Calibration: ");
+    SerialUSB.println(weight_calib);
+      SerialUSB.print("Calibration Weight: ");
+    SerialUSB.println(calibration_weight);
 
-    //SerialUSB.print("Calibration done?: ");
-    //SerialUSB.println(calib);
+    SerialUSB.print("Calibration done?: ");
+    SerialUSB.println(calib);
 
     *val_c = weight_calib;
     *val_o = weight_offset; 
@@ -392,12 +389,12 @@ void get_Weight_calib2(float* val_c, float* val_o, float* val_cw2){
         calibration_weight2 = flash_cw2.read();
     }
 
-    //SerialUSB.print("Offset2: ");
-    //SerialUSB.println(weight_offset2);
-    //SerialUSB.print("Calibration2: ");
-    //SerialUSB.println(weight_calib2);
-    //SerialUSB.print("Calibration_weight2: ");
-    //SerialUSB.println(calibration_weight2);
+    SerialUSB.print("Offset2: ");
+    SerialUSB.println(weight_offset2);
+    SerialUSB.print("Calibration2: ");
+    SerialUSB.println(weight_calib2);
+    SerialUSB.print("Calibration_weight2: ");
+    SerialUSB.println(calibration_weight2);
 
     SerialUSB.print("Calibration2 done?: ");
     SerialUSB.println(calib);
@@ -409,13 +406,13 @@ void get_Weight_calib2(float* val_c, float* val_o, float* val_cw2){
 }
 
 float get_Temp(void){
-    //call sensors.requestTemperatures() to issue a global temperature 
-    //request to all devices on the bus
+    // call sensors.requestTemperatures() to issue a global temperature 
+    // request to all devices on the bus
     //SerialUSB.print("Requesting temperatures...");
     sensors.requestTemperatures(); // Send the command to get temperatures
     //SerialUSB.println("DONE");
-    //After we got the temperatures, we can print them here.
-    //We use the function ByIndex, and as an example get the temperature from the first sensor only.
+    // After we got the temperatures, we can print them here.
+    // We use the function ByIndex, and as an example get the temperature from the first sensor only.
     //SerialUSB.print("Temperature for the device 1 (index 0) is: ");
     //SerialUSB.println(sensors.getTempCByIndex(0));  
     return sensors.getTempCByIndex(0); 
@@ -432,21 +429,21 @@ long get_Weight_raw(void){
 float get_calib(void){
 	long val1;
     if(adc.getValue(val1)){        //this call blocks until a sample is ready!
-    //SerialUSB.print(millis());
-    //SerialUSB.print(",");
+    // SerialUSB.print(millis());
+    //  SerialUSB.print(",");
     //SerialUSB.println((4.2/8388607.0)*val, 10);  //23 bits of accuracy (24th is sign) with 4.2 volt (measured) AVDD. 2^23 = 8388607 !
     } 
     else{
-    //SerialUSB.println("Failed to get data");
+        SerialUSB.println("Failed to get data");
     }
     delay(500);
     
-    //SerialUSB.println("Val1_getCalib:");
-    //SerialUSB.println(val1);
+    SerialUSB.println("Val1_getCalib:");
+    SerialUSB.println(val1);
     float calib = 0;
     calib = static_cast<float>(val1);
-    //SerialUSB.println("calib_getCalib:");
-    //SerialUSB.println(calib);
+    SerialUSB.println("calib_getCalib:");
+    SerialUSB.println(calib);
     
     return calib;
 }
@@ -483,7 +480,7 @@ float get_Weight(void){
     //SerialUSB.println((4.2/8388607.0)*val, 10);  //23 bits of accuracy (24th is sign) with 4.2 volt (measured) AVDD. 2^23 = 8388607 !
     } 
     else{
-        //SerialUSB.println("Failed to get data");
+        SerialUSB.println("Failed to get data");
     }
     delay(500);
     
@@ -494,11 +491,11 @@ float get_Weight(void){
     float wzs = (-m) * weight_offset;
     result = m * val1 + wzs - tare_weight;
     
-    //SerialUSB.println("WeightMeasure:");
-    //SerialUSB.println(val1);
-    //SerialUSB.println(calibration_weight);
-    //SerialUSB.println(weight_calib);
-    //SerialUSB.println(weight_offset);
+    SerialUSB.println("WeightMeasure:");
+    SerialUSB.println(val1);
+    SerialUSB.println(calibration_weight);
+    SerialUSB.println(weight_calib);
+    SerialUSB.println(weight_offset);
     
     // result = (val + weight_offset)*weight_calib;
     // weight_offset is val@0g
@@ -537,16 +534,17 @@ float get_Weight2(void){
     float wzs = (-m) * weight_offset2;
     result = m * val2 + wzs - tare_weight;
     
-    //SerialUSB.println("WeightMeasure2:");
-    //SerialUSB.println(val2);
-    //SerialUSB.println(calibration_weight2);
-    //SerialUSB.println(weight_calib2);
-    //SerialUSB.println(weight_offset2);
+    SerialUSB.println("WeightMeasure2:");
+    SerialUSB.println(val2);
+    SerialUSB.println(calibration_weight2);
+    SerialUSB.println(weight_calib2);
+    SerialUSB.println(weight_offset2);
     
     // result = (val + weight_offset)*weight_calib;
     // weight_offset is val@0g
     // weight_calib is (val@calib-val@0g)*calibration_weight
     
+	
     return result; 
 }
 
@@ -612,9 +610,9 @@ void checkMessage(const char msg[STDSTRINGLEN])
 }
 
 bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
-{	
-    DEBUG_STREAM.println();
-    DEBUG_STREAM.println("Sending message through UDP");
+{
+    // DEBUG_STREAM.println();
+    // DEBUG_STREAM.println("Sending message through UDP");
 
     int localPort = 16666;
     int socketID = nbiot.createSocket(localPort);
@@ -624,79 +622,36 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
         return "SOCKETERROR";
     }
 
-    DEBUG_STREAM.println("Created socket!");
+    // DEBUG_STREAM.println("Created socket!");
 
+    // const char* strBuffer = "1,50,49";
     const char *text = param;
     size_t len;
-    
-    // Print text before encrypt
-    DEBUG_STREAM.print("Text to send before encrypt: ");
-    DEBUG_STREAM.println(text);
-       
-    // PRINT MEMORY
-    SerialUSB.print("#before generating encrypt_data: ");
-	int freemem = freeMemory();
-	SerialUSB.println(freemem);
-	
     const unsigned char *encrypt_data = (const unsigned char*)xxtea_encrypt(text, strlen(text), key, &len);
-    
-    SerialUSB.print("#after generating encrypt_data & before base64 data: ");
-	freemem = freeMemory();
-	SerialUSB.println(freemem);
-	
-	// free text  --> not working here
-	//free(const_cast<char*>(text));
-
-	
-    const char *base64_data = base64_encode(encrypt_data, len);
-    
-    // free memory from encryption buffers
-    free(const_cast<unsigned char*>(encrypt_data));
-    
-    //DEBUG_STREAM.print("Text with xxtea + base64_data: ");
-    //DEBUG_STREAM.println(base64_data);
-    
-    SerialUSB.print("#after generating base64_data & before generating strBuffer: ");
-	freemem = freeMemory();
-	SerialUSB.println(freemem);
+    char * base64_data = base64_encode(encrypt_data, len);
     
     const char* strBuffer = base64_data;
-    // free memory from encryption buffers
-    free(const_cast<char*>(base64_data));
-    
-    // PRINT MEMORY
- 	SerialUSB.print("# after free base64 data: ");
-	freemem = freeMemory();
-	SerialUSB.println(freemem);
-    
-    // PRINT encrypted data (strBuffer)
     DEBUG_STREAM.println(strBuffer);
     size_t size = strlen(strBuffer);
-    
+
     // send data
     // DEBUG_STREAM.print("sending to: ");
     // DEBUG_STREAM.println(server.ip);
     int lengthSent = nbiot.socketSend(socketID, server.ip, server.port, strBuffer); // "195.34.89.241" : 7 is the ublox echo service
-  
-    free(const_cast<char*>(strBuffer));
-    
-    // PRINT MEMORY
- 	SerialUSB.print("# after free strBuffer: ");
-	freemem = freeMemory();
-	SerialUSB.println(freemem);
-    
-    DEBUG_STREAM.print("String length vs sent: ");
-    DEBUG_STREAM.print(size);
-    DEBUG_STREAM.print(" vs ");
-    DEBUG_STREAM.println(lengthSent);
 
+     DEBUG_STREAM.print("String length vs sent: ");
+     DEBUG_STREAM.print(size);
+     DEBUG_STREAM.print(" vs ");
+     DEBUG_STREAM.println(lengthSent);
 	
 	String msg = "";
     // wait for data
     if (nbiot.waitForUDPResponse()) {
         // DEBUG_STREAM.println("Received response!");
         while (nbiot.hasPendingUDPBytes()) {
-            char data[10];   
+            char data[10];
+            
+            
             // read two bytes at a time
             SaraN2UDPPacketMetadata p;
             int size = nbiot.socketReceiveHex(data, 2, &p);
@@ -728,43 +683,18 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
     nbiot.closeSocket(socketID);
     DEBUG_STREAM.println();
     
-   //*********** // check message from UDP Response // ************ //
+   //************* // check message // ********************** //
     
     DEBUG_STREAM.println("checking message...");    
 	DEBUG_STREAM.println(msg);
-	DEBUG_STREAM.print("message UDP Response enrypted:");
-	DEBUG_STREAM.println(msg.c_str());
-	
-
-	encrypt_data = (const unsigned char*)base64_decode(msg.c_str(), &len);
-	
-	//DEBUG_STREAM.println(encrypt_data);
-	
-	// PRINT MEMORY
- 	SerialUSB.print("# after encrypt_data 2nd time: ");
-	freemem = freeMemory();
-	SerialUSB.println(freemem);
-		
-	char * decrypt_data =  (char*)xxtea_decrypt(encrypt_data, len, key, &len);
-
 	DEBUG_STREAM.println("message decrypted:");
-	DEBUG_STREAM.println(decrypt_data);	
 	
-	// free memory from decryption buffers (encrypt_data)
-	free(const_cast<unsigned char*>(encrypt_data));
-	
-	// PRINT MEMORY
- 	SerialUSB.print("# after free decrypt_data: ");
-	freemem = freeMemory();
-	SerialUSB.println(freemem);
-		
+	encrypt_data = (const unsigned char*)base64_decode(msg.c_str(), &len);
+	char * decrypt_data =  (char*)xxtea_decrypt(encrypt_data, len, key, &len);
 	DEBUG_STREAM.println(decrypt_data);
     msg = decrypt_data;
 	
-	// free memory from decryption buffers
-	free(decrypt_data);
 	
-	//(const_cast<unsigned char*>(encrypt_data));
     
     if(msg.length() > 0) // something was transmitted..
     {
@@ -775,7 +705,6 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
 	  {
       DEBUG_STREAM.println("OK! nothing todo");
 	  }
-
       if(msg.indexOf('a') >= 0) // Tare command for load Cell A
       {
 	   DEBUG_STREAM.println("tare A!");
@@ -795,7 +724,6 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
 	   sendMessageThroughUDP("tared A");
        
       }
- 
       if(msg.indexOf('A') >= 0) // Weight definition for load Cell A
       {
 	   // start loadcellstuff
@@ -818,7 +746,6 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
        set_Weight_calib(weight_calib,weight_offset,calibration_weight);
        
       }
- 
       if(msg.indexOf('b') >= 0) // Tare command for load Cell B
       {
        DEBUG_STREAM.println("tare B!");
@@ -838,7 +765,6 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
 	   set_Weight_calib2(weight_calib2,weight_offset2,calibration_weight2);
 	   sendMessageThroughUDP("tared B");
       }
- 
       if(msg.indexOf('B') >= 0) // Weight definition for load Cell B
       {
 	   // start loadcellstuff
@@ -861,7 +787,6 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
        DEBUG_STREAM.print(weight_calib2);
        set_Weight_calib2(weight_calib2,weight_offset2,calibration_weight2);
       }
-
       if(msg.indexOf('P') >= 0) // New Port to send to
       {   
        uint16_t j = (uint16_t)readNumber(msg,msg.indexOf('P')+1); 
@@ -874,7 +799,6 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
        // TODO: Check if it's the same already and don't write to flash -> prevent too many writings to flash
        // TODO: send test message and if it works keep on going - if not fall back to the old one
       }
- 
       if(msg.indexOf('I') >= 0) // New IP Address to send to
       {
 	   DEBUG_STREAM.print("Old IP Address: ");
@@ -932,7 +856,6 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
 	   }
 
       }
- 
       if(msg.indexOf('F') >= 0) // Sending interval in seconds
       {
 		int j = readNumber(msg,msg.indexOf('F')+1);
@@ -942,7 +865,6 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
 			interval_altered = true;
 		}
       }
- 
       if(msg.indexOf('D') >= 0) // Datalogging interval in seconds
       {
        int j = readNumber(msg,msg.indexOf('D')+1);
@@ -952,7 +874,6 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
 			interval_altered = true;
 		}
       }
- 
       if(interval_altered){ // if anything changed in the time setting
 		  if(datalogtime > datasendtime) // prevent the bad idea to send more often than to measure
 		  {
@@ -963,7 +884,6 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
 		  flash_timeset.write(true);
 		  DEBUG_STREAM.println("New sending and logging interval wrote to flash");
 	  }
-
 	  if(msg.indexOf('T') >= 0){ // RTC information sent 
 		unsigned long j = readEpoch(msg,msg.indexOf('T')+1);
 		rtc.setEpoch(j); // set RTC time
@@ -973,7 +893,6 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
       {
        play_rtttl(success);
       }
-
       return 1;
     }
     else
@@ -982,14 +901,10 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
       if(!played_bad){
 		  play_rtttl(bad);
 		  played_bad = true;
-	  } 
-	  
+	  }
+      
 	  return 0;
     }
-    // PRINT MEMORY
- 	SerialUSB.print("#end of function SendThroughUDP: ");
-	freemem = freeMemory();
-	SerialUSB.println(freemem);
 }
 
 bool sendMessageThroughUDP_noanswer(const char param[STDSTRINGLEN])
@@ -1047,7 +962,7 @@ void cleanResponse()
 
             if (size) {
                 /*DEBUG_STREAM.write(HEX_PAIR_TO_BYTE(data[0],data[1]));
-                // p is a pointer to eory that is owned by nbiot class
+                // p is a pointer to memory that is owned by nbiot class
                 DEBUG_STREAM.println(char(HEX_PAIR_TO_BYTE(data[0],data[1])));
                 DEBUG_STREAM.println(p.socketID);
                 DEBUG_STREAM.println(p.ip);
@@ -1116,13 +1031,18 @@ void safe_sens_value(float weight1, float weight2, float temp, float volt, int8_
 	sensorbuffer.pointer++;
 	if(sensorbuffer.pointer == SENSOR_BUFFER_LEN){
 		sensorbuffer.pointer = 0;
-	}	
+	}
+	
 	sensorbuffer.weight1[sensorbuffer.pointer] = weight1;
 	sensorbuffer.weight2[sensorbuffer.pointer] = weight2;
 	sensorbuffer.temp[sensorbuffer.pointer] = temp;
 	sensorbuffer.volt[sensorbuffer.pointer] = volt;
 	sensorbuffer.signal[sensorbuffer.pointer] = signal;
 	sensorbuffer.epochtime[sensorbuffer.pointer] = epochtime;
+
+	
+	
+
 }
 
 //make sure that position is valid by using get_sens_pointer with offset

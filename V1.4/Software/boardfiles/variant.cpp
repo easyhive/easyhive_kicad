@@ -36,10 +36,10 @@ const PinDescription g_APinDescription[]=
   // 6..13 Main IO Pins (D6-D13) Digital Properties
   { PORTA, 6,  PIO_DIGITAL,    (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER),     No_ADC_Channel, PWM1_CH0,   TCC1_CH0,     EXTERNAL_INT_6    }, // WEIGHT_CLK
   { PORTA, 7,  PIO_DIGITAL,    (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER),     No_ADC_Channel, PWM1_CH1,   TCC1_CH1,     EXTERNAL_INT_7    }, // WEIGHT_PDWN
-  { PORTA, 8,  PIO_TIMER,      (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER),     No_ADC_Channel, PWM0_CH0,   TCC0_CH0,     EXTERNAL_INT_NMI  }, // TCC0/WO[0]
-  { PORTA, 9,  PIO_TIMER,      (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER),     No_ADC_Channel, PWM0_CH1,   TCC0_CH1,     EXTERNAL_INT_9    }, // TCC0/WO[1]
-  { PORTA, 10, PIO_TIMER_ALT,  (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER_ALT), No_ADC_Channel, PWM0_CH2,   TCC0_CH2,     EXTERNAL_INT_10   }, // TCC0/WO[2]
-  { PORTA, 11, PIO_TIMER_ALT,  (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER_ALT), No_ADC_Channel, PWM0_CH3,   TCC0_CH3,     EXTERNAL_INT_11   }, // TCC0/WO[3]
+  { PORTA, 8,  PIO_TIMER,      (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER),     No_ADC_Channel, PWM0_CH0,   TCC0_CH0,     EXTERNAL_INT_NMI  }, // I2S_SD
+  { PORTA, 9,  PIO_TIMER,      (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER),     No_ADC_Channel, PWM0_CH1,   TCC0_CH1,     EXTERNAL_INT_9    }, // I2S_MCK
+  { PORTA, 10, PIO_TIMER_ALT,  (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER_ALT), No_ADC_Channel, PWM0_CH2,   TCC0_CH2,     EXTERNAL_INT_10   }, // I2S_SCK
+  { PORTA, 11, PIO_TIMER_ALT,  (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER_ALT), No_ADC_Channel, PWM0_CH3,   TCC0_CH3,     EXTERNAL_INT_11   }, // I2S_FS
   { PORTB, 2,  PIO_DIGITAL,    (PIN_ATTR_DIGITAL),                                     No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_2    },
   { PORTB, 3,  PIO_DIGITAL,    (PIN_ATTR_DIGITAL),                                     No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_3    },
 
@@ -68,9 +68,9 @@ const PinDescription g_APinDescription[]=
   { PORTB, 3,  PIO_ANALOG,     (PIN_ATTR_ANALOG),                                      ADC_Channel11,  NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_3    },
 
   // 34..36 Other Analog Pins
-  { PORTA, 2,  PIO_ANALOG,     (PIN_ATTR_ANALOG),                                      DAC_Channel0,   NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_2    }, // DAC/VOUT
+  { PORTA, 2,  PIO_ANALOG,     (PIN_ATTR_ANALOG),                                      DAC_Channel0,   NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_2    }, // BAT_VOLT
   { PORTA, 3,  PIO_ANALOG,     (PIN_ATTR_ANALOG),                                      ADC_Channel1,   NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE }, // AREF
-  { PORTA, 5,  PIO_ANALOG,     (PIN_ATTR_ANALOG),                                      ADC_Channel5,   NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE }, // BAT_VOLT
+  { PORTA, 5,  PIO_ANALOG,     (PIN_ATTR_ANALOG),                                      ADC_Channel5,   NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE }, // WEIGHT_DATA
   
   // 37..38 USB Pins
   { PORTA, 24, PIO_COM,        (PIN_ATTR_NONE),                                        No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE }, // USB_N
@@ -99,13 +99,13 @@ const PinDescription g_APinDescription[]=
   { PORTA, 23, PIO_SERCOM,     (PIN_ATTR_DIGITAL),                                     No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_7    }, // I2C_SCL
   
   // 49
-  { PORTA,  4, PIO_OUTPUT,     (PIN_ATTR_DIGITAL),                                     No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE }, // WEIGHT_TEMP_EN
+  { PORTA, 4, PIO_OUTPUT,     (PIN_ATTR_DIGITAL),                                     No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE }, // WEIGHT_TEMP_EN
 
   // 50..53
   { PORTA, 19, PIO_DIGITAL,      (PIN_ATTR_DIGITAL),                                     No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE  }, // WEIGHT_SELECT
   { PORTA, 27, PIO_DIGITAL,     (PIN_ATTR_DIGITAL),                                     No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE }, // SARA_TX_ENABLE
   { PORTA, 28, PIO_DIGITAL,     (PIN_ATTR_DIGITAL),                                     No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE }, // BUZZER
-  { PORTA, 5,  PIO_OUTPUT,     (PIN_ATTR_DIGITAL),                                     No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE }, // WEIGHT_DATA
+  { PORTA, 5,  PIO_DIGITAL,     (PIN_ATTR_DIGITAL),                                     No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE }, // WEIGHT_DATA
 } ;
 
 const void* g_apTCInstances[TCC_INST_NUM+TC_INST_NUM]={ TCC0, TCC1, TCC2, TC3, TC4, TC5 } ;

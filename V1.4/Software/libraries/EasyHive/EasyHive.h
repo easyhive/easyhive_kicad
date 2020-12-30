@@ -35,7 +35,7 @@
 // define udp msg length
 #define STDSTRINGLEN 30
 
-#define SENSOR_BUFFER_LEN 5
+#define SENSOR_BUFFER_LEN 50
 
 void init_LEDs(void);
 void LEDs_off(void);
@@ -53,7 +53,9 @@ void init_Temp(void);
 
 float get_Weight(void);
 float get_Weight2(void);
+float get_calib(void);
 long get_Weight_raw(void);
+
 
 void set_Weight_calib(float val_c, float val_o, float val_cw);
 void set_Weight_calib2(float val_c, float val_o, float val_cw);
@@ -69,8 +71,11 @@ void serialEvent(void);
 void check_USB_in(void);
 
 bool sendMessageThroughUDP(const char param[STDSTRINGLEN]);
+bool sendMessageThroughUDP_noanswer(const char param[STDSTRINGLEN]);
+void cleanResponse();
 void checkMessage(const char msg[STDSTRINGLEN]);
 int readNumber(String msg, uint8_t position);
+unsigned long readEpoch(String msg, uint8_t position);
 
 void read_sens_value(float* weight1, float* weight2, float* temp, float* volt, int8_t* signal, long* package, int position);
 void safe_sens_value(float weight1, float weight2, float temp, float volt, int8_t signal, long package);
