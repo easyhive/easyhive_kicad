@@ -39,6 +39,7 @@ uint8_t BER;
 
 void setup(void)
 {
+  loopcounter = 0;
   // play_rtttl(startup);
   tone(BUZZER, 3950);
   delay(400);
