@@ -14,9 +14,9 @@
 #include "rtttl.h"
 #include "xxtea.h"
 #include "base64.h"
-#include <stdio.h>
-#include <RTCZero.h>
-#include <MemoryFree.h>
+#include "stdio.h"
+#include "RTCZero.h"
+#include "MemoryFree.h"
 
 // songs for the buzzer system
 // d=16,o=5,b=250:3a7,4p,3a7,4p,3a7,4p,3b7,4p,3b7,4p
@@ -33,8 +33,9 @@ char *countdown3 = "8g#,f#,d6,2c#.6,16c#6,16d6,16c#6,16b,1c#6,2p";
 // Set the Password for encryption
 const char *key = "9Udj81*";
 
-// Set the BoardID variable
-int BoardID = 1;
+// Set the BoardID variable fo testing reasons, if you want a fixed BoardID even if board is flashed.
+int BoardID = 47;			// comment this line for generating a new BoardID
+bool fixBoardID = true;		// set this to false to have normal behaviour
 
 // Set intervals for data logging and data sending [seconds] // due to watchdogtimer they result in multiples of 8
 int datasendtime =  15;
@@ -224,7 +225,8 @@ void init_server_data(void){
 void init_BoardID(void){
 	// set BoardID to standard if not set yet
 	bool boardset = flash_boardid_set.read();
-
+	SerialUSB.println(BoardID);
+	
     //needs to be calibrated at least once
     if(boardset == true){
         // 
@@ -233,9 +235,17 @@ void init_BoardID(void){
         //SerialUSB.println(BoardID);
     }
     else{
-		//SerialUSB.println("BoardID is not set yet - setting it to standard");     
-        BoardID = 1; 
-        //SerialUSB.println(BoardID);
+		// if you want to use a fixed BoardID for testing reasons, set fixBoardID in the beginning to true 
+		// and define the BoardId.
+		if(fixBoardID){
+			flash_boardid_set.write(true); 
+			// boardId as defined above (line 38).
+		}
+		else{
+			//SerialUSB.println("BoardID is not set yet - setting it to standard");     
+			BoardID = 1;
+			//SerialUSB.println(BoardID);
+		}
     }
 }
 
@@ -630,42 +640,20 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
     // Print text before encrypt
     DEBUG_STREAM.print("Text to send before encrypt: ");
     DEBUG_STREAM.println(text);
-       
-    // PRINT MEMORY
-    SerialUSB.print("#before generating encrypt_data: ");
-	int freemem = freeMemory();
-	SerialUSB.println(freemem);
 	
     const unsigned char *encrypt_data = (const unsigned char*)xxtea_encrypt(text, strlen(text), key, &len);
-    
-    SerialUSB.print("#after generating encrypt_data & before base64 data: ");
-	freemem = freeMemory();
-	SerialUSB.println(freemem);
-	
-	// free text  --> not working here
-	//free(const_cast<char*>(text));
-
-	
     const char *base64_data = base64_encode(encrypt_data, len);
     
-    // free memory from encryption buffers
+    // free memory from encryption buffer
     free(const_cast<unsigned char*>(encrypt_data));
     
     //DEBUG_STREAM.print("Text with xxtea + base64_data: ");
     //DEBUG_STREAM.println(base64_data);
     
-    SerialUSB.print("#after generating base64_data & before generating strBuffer: ");
-	freemem = freeMemory();
-	SerialUSB.println(freemem);
-    
     const char* strBuffer = base64_data;
-    // free memory from encryption buffers
-    free(const_cast<char*>(base64_data));
     
-    // PRINT MEMORY
- 	SerialUSB.print("# after free base64 data: ");
-	freemem = freeMemory();
-	SerialUSB.println(freemem);
+    // free memory from encryption buffer
+    free(const_cast<char*>(base64_data));
     
     // PRINT encrypted data (strBuffer)
     DEBUG_STREAM.println(strBuffer);
@@ -676,18 +664,15 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
     // DEBUG_STREAM.println(server.ip);
     int lengthSent = nbiot.socketSend(socketID, server.ip, server.port, strBuffer); // "195.34.89.241" : 7 is the ublox echo service
   
+	// free memory from stri buffer
     free(const_cast<char*>(strBuffer));
-    
-    // PRINT MEMORY
- 	SerialUSB.print("# after free strBuffer: ");
-	freemem = freeMemory();
-	SerialUSB.println(freemem);
     
     DEBUG_STREAM.print("String length vs sent: ");
     DEBUG_STREAM.print(size);
     DEBUG_STREAM.print(" vs ");
     DEBUG_STREAM.println(lengthSent);
 
+	//*********** // UDP Response // ************ //
 	
 	String msg = "";
     // wait for data
@@ -733,36 +718,23 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
 	DEBUG_STREAM.print("message UDP Response enrypted:");
 	DEBUG_STREAM.println(msg.c_str());
 	
-
 	encrypt_data = (const unsigned char*)base64_decode(msg.c_str(), &len);
 	
 	//DEBUG_STREAM.println(encrypt_data);
-	
-	// PRINT MEMORY
- 	SerialUSB.print("# after encrypt_data 2nd time: ");
-	freemem = freeMemory();
-	SerialUSB.println(freemem);
 		
 	char * decrypt_data =  (char*)xxtea_decrypt(encrypt_data, len, key, &len);
 
 	DEBUG_STREAM.println("message decrypted:");
 	DEBUG_STREAM.println(decrypt_data);	
 	
-	// free memory from decryption buffers (encrypt_data)
+	// free memory from encryption buffer
 	free(const_cast<unsigned char*>(encrypt_data));
-	
-	// PRINT MEMORY
- 	SerialUSB.print("# after free decrypt_data: ");
-	freemem = freeMemory();
-	SerialUSB.println(freemem);
 		
 	DEBUG_STREAM.println(decrypt_data);
     msg = decrypt_data;
 	
-	// free memory from decryption buffers
+	// free memory from decryption buffer
 	free(decrypt_data);
-	
-	//(const_cast<unsigned char*>(encrypt_data));
     
     if(msg.length() > 0) // something was transmitted..
     {
@@ -984,10 +956,6 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
 	  
 	  return 0;
     }
-    // PRINT MEMORY
- 	SerialUSB.print("#end of function SendThroughUDP: ");
-	freemem = freeMemory();
-	SerialUSB.println(freemem);
 }
 
 bool sendMessageThroughUDP_noanswer(const char param[STDSTRINGLEN])
@@ -1174,7 +1142,6 @@ void powerdownfor(int i){
 		systemSleep();
 	}
 }
-
 
 
 /**
