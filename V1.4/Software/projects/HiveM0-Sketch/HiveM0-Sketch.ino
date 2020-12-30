@@ -218,6 +218,7 @@ void loop(void)
     }
     else {
       for (int i = 0; i > -loopcounter && i > -SENSOR_BUFFER_LEN; i--) {
+        // SENSOR_BUFFER_LEN is defined in easyhive.h (50)
         float weight1 = 0;
         float weight2 = 0;
         float temp = 0;
