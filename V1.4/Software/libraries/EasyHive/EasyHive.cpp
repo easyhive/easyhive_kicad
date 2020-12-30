@@ -34,8 +34,9 @@ char *countdown3 = "8g#,f#,d6,2c#.6,16c#6,16d6,16c#6,16b,1c#6,2p";
 const char *key = "9Udj81*";
 
 // Set the BoardID variable fo testing reasons, if you want a fixed BoardID even if board is flashed.
-//int BoardID = 47;			// uncomment this line for fixed BoardID
+int BoardID;					
 bool fixBoardID = false;		// set this to true for fixed BoardID
+//BoardID = 47;					// uncomment this line for fixed BoardID
 
 // Set intervals for data logging and data sending [seconds] // due to watchdogtimer they result in multiples of 8
 int datasendtime =  15;
@@ -187,7 +188,7 @@ void init_server_data(void){
 void init_BoardID(void){
 	// set BoardID to standard if not set yet
 	bool boardset = flash_boardid_set.read();
-	SerialUSB.println(BoardID);
+	//SerialUSB.println(BoardID);
 	
     //needs to be calibrated at least once
     if(boardset == true){
@@ -1061,6 +1062,7 @@ void read_sens_value(float* weight1, float* weight2, float* temp, float* volt, i
 	*volt = sensorbuffer.volt[position];
 	*signal = sensorbuffer.signal[position];
 	*epochtime = sensorbuffer.epochtime[position];
+	
     return; 
 }
 
@@ -1070,8 +1072,6 @@ int get_sens_pointer(int offset){
 	
 	if(offset == 0)
 		return sensorbuffer.pointer;
-    // if the array boundaries are exceeded 
-    // (e.g. first entry on pos 49, second entry on pos 0 -> in second run through for loop: offset=-1, pointer is still 0 -> but pos 49 is wanted.)
 	else{
 		ans = sensorbuffer.pointer + offset; 
 		if(ans < 0){
