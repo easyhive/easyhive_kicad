@@ -1061,7 +1061,6 @@ void read_sens_value(float* weight1, float* weight2, float* temp, float* volt, i
 	*volt = sensorbuffer.volt[position];
 	*signal = sensorbuffer.signal[position];
 	*epochtime = sensorbuffer.epochtime[position];
-	
     return; 
 }
 
@@ -1071,6 +1070,8 @@ int get_sens_pointer(int offset){
 	
 	if(offset == 0)
 		return sensorbuffer.pointer;
+    // if the array boundaries are exceeded 
+    // (e.g. first entry on pos 49, second entry on pos 0 -> in second run through for loop: offset=-1, pointer is still 0 -> but pos 49 is wanted.)
 	else{
 		ans = sensorbuffer.pointer + offset; 
 		if(ans < 0){
