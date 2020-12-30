@@ -34,8 +34,9 @@ char *countdown3 = "8g#,f#,d6,2c#.6,16c#6,16d6,16c#6,16b,1c#6,2p";
 const char *key = "9Udj81*";
 
 // Set the BoardID variable fo testing reasons, if you want a fixed BoardID even if board is flashed.
-//int BoardID = 47;			// uncomment this line for fixed BoardID
+int BoardID = 47;			
 bool fixBoardID = false;		// set this to true for fixed BoardID
+//BoardID = 47					// uncomment this line for fixed BoardID
 
 // Set intervals for data logging and data sending [seconds] // due to watchdogtimer they result in multiples of 8
 int datasendtime =  15;
