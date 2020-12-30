@@ -51,8 +51,6 @@ void setup(void)
   noTone(BUZZER);
   // sodaq_wdt_safe_delay(1000);
 
-
-  init_LEDs();
   init_RTC();
   init_server_data();
   init_BoardID();
