@@ -9,6 +9,7 @@
 #include "FlashStorage.h"
 #include "EasyHive.h"
 #include "rtttl.h"
+#include "MemoryFree.h"
 
 char *startup = "OneMoreT:d=16,o=5,b=250:3a7,4p,3a7,4p,3a7,4p,3b7,4p,3b7,4p";
 
@@ -39,16 +40,15 @@ uint8_t BER;
 void setup(void)
 {
   // play_rtttl(startup);
-  tone(BUZZER,3950);
+  tone(BUZZER, 3950);
   delay(400);
   noTone(BUZZER);
-  tone(BUZZER,4000);
+  tone(BUZZER, 4000);
   delay(380);
   noTone(BUZZER);
-  tone(BUZZER,4080);
+  tone(BUZZER, 4080);
   delay(370);
   noTone(BUZZER);
-  
   // sodaq_wdt_safe_delay(1000);
 
 
@@ -63,17 +63,17 @@ void setup(void)
   float w_offset;
   float w_cweight;
   get_Weight_calib(&w_calib, &w_offset, &w_cweight);
-  SerialUSB.println("calib1");
-  SerialUSB.println(w_calib);
-  SerialUSB.println(w_offset);
+  //SerialUSB.println("calib1");
+  //SerialUSB.println(w_calib);
+  //SerialUSB.println(w_offset);
 
   float w_calib2;
   float w_offset2;
   float w_cweight2;
   get_Weight_calib2(&w_calib2, &w_offset2, &w_cweight2);
-  SerialUSB.println("calib2");
-  SerialUSB.println(w_calib2);
-  SerialUSB.println(w_offset2);
+  //SerialUSB.println("calib2");
+  //SerialUSB.println(w_calib2);
+  //SerialUSB.println(w_offset2);
 
 
   // TEST
@@ -137,6 +137,11 @@ void loop(void)
   unsigned long loopstarttime = millis();
   loopcounter++;
 
+  SerialUSB.println("==============================================");
+  SerialUSB.print("Free RAM@start loop ");
+  int freemem = freeMemory();
+  SerialUSB.println(freemem);
+
   // start loadcellstuff
   digitalWrite(LC_ON, HIGH);
   digitalWrite(PDWN, HIGH);
@@ -144,8 +149,8 @@ void loop(void)
   // sodaq_wdt_safe_delay(5000);
 
   float temp_val = get_Temp();
-  SerialUSB.print("Temp: ");
-  SerialUSB.println(temp_val);
+  //SerialUSB.print("Temp: ");
+  //SerialUSB.println(temp_val);
 
 
   digitalWrite(SELECT, LOW);
@@ -156,12 +161,12 @@ void loop(void)
   sodaq_wdt_safe_delay(150);
 
   float weight_val1 = get_Weight();
-  SerialUSB.print("Weight: ");
-  SerialUSB.println(weight_val1);
+  //SerialUSB.print("Weight: ");
+  //SerialUSB.println(weight_val1);
 
   // long weight_val_raw1 = get_Weight_raw();
-  // SerialUSB.print("Weight Raw: ");
-  // SerialUSB.println(weight_val_raw1, DEC);
+  //SerialUSB.print("Weight Raw: ");
+  //SerialUSB.println(weight_val_raw1, DEC);
 
   digitalWrite(SELECT, HIGH); // read the other side
   sodaq_wdt_safe_delay(150);
@@ -172,12 +177,12 @@ void loop(void)
   sodaq_wdt_safe_delay(150);
 
   float weight_val2 = get_Weight2();
-  SerialUSB.print("Weight2: ");
-  SerialUSB.println(weight_val2);
+  //SerialUSB.print("Weight2: ");
+  //SerialUSB.println(weight_val2);
 
   // long weight_val_raw2 = get_Weight_raw();
-  // SerialUSB.print("Weight Raw: ");
-  // SerialUSB.println(weight_val_raw2, DEC);
+  //SerialUSB.print("Weight Raw: ");
+  //SerialUSB.println(weight_val_raw2, DEC);
 
   //Stop LoadecellStuff
   digitalWrite(LC_ON, LOW);
@@ -197,7 +202,6 @@ void loop(void)
   // [WEIGHT1],[WEIGHT2],[TEMP],[VOLT],[SIGNALQUALITY],[BOARDID],[Package/EPOCH]
 
   safe_sens_value(weight_val1, weight_val2, temp_val, VOLT, SIGNAL, epochtime );
-  
 
   // String msg = String(weight_val1) + "," + String(weight_val2) + "," + String(temp_val) + "," + String(VOLT) + "," + String(SIGNAL) + "," + String(BoardID) + "," + String(package) ;
 
@@ -221,20 +225,38 @@ void loop(void)
         float volt = 0;
         int8_t csq = 0;
         long epoch = 0;
-
+      
         int pointer_pos = get_sens_pointer(i);
         read_sens_value(&weight1, &weight2, &temp, &volt, &csq, &epoch, pointer_pos);
-        String msg = String(weight1) + "," + String(weight2) + "," + String(temp) + "," + String(volt) + "," + String(csq) + "," + String(BoardID) + "," + String(epoch) ;
+
+ 
+
+        // SerialUSB.print("new String: ");
+        // SerialUSB.println(result);
+        //String msg = String(weight1) + "," + String(weight2) + "," + String(temp) + "," + String(volt) + "," + String(csq) + "," + String(BoardID) + "," + String(epoch) ;       
+        String msg = String(weight1) + "," + String(weight2) + "," + String(temp) + "," + String(freemem) + "," + String(csq) + "," + String(BoardID) + "," + String(epoch) ;
+
+      // SerialUSB.print("old String: ");
+      // SerialUSB.println(msg);
+
 
         // if it's the first message:
-        sendMessageThroughUDP(msg.c_str());
+      sendMessageThroughUDP(msg.c_str());
         // TODO: Was macht er denn falls Senden schiefläuft? Daten verwerfen?
+      
       }
     }
     loopcounter = 0;
+    
+  SerialUSB.print("Free RAM end ");
+  freemem = freeMemory();
+  SerialUSB.println(freemem);
   }
+
+
+  
   else {
-    SerialUSB.print("logging data...");
+    //SerialUSB.print("logging data...");
     // write data to to the logs
 
     float weight1 = 0;
@@ -246,32 +268,36 @@ void loop(void)
 
     int pointer_pos = get_sens_pointer(0);
     read_sens_value(&weight1, &weight2, &temp, &volt, &csq, &pktnr, pointer_pos);
-    SerialUSB.println("\n ");
-    SerialUSB.print("Temp: ");
-    SerialUSB.println(temp);
-    SerialUSB.print("Weight1 ");
-    SerialUSB.println(weight1);
-    SerialUSB.print("Weigh2   ");
-    SerialUSB.println(weight2);
-    SerialUSB.print("volt ");
-    SerialUSB.println(volt);
-    SerialUSB.print("signal ");
-    SerialUSB.println(csq);
-    SerialUSB.print("package ");
-    SerialUSB.println(pktnr);
+    //SerialUSB.println("\n ");
+    //SerialUSB.print("Temp: ");
+    //SerialUSB.println(temp);
+    //SerialUSB.print("Weight1 ");
+    //SerialUSB.println(weight1);
+    //SerialUSB.print("Weigh2   ");
+    //SerialUSB.println(weight2);
+    //SerialUSB.print("volt ");
+    //SerialUSB.println(volt);
+    //SerialUSB.print("signal ");
+    //SerialUSB.println(csq);
+    //SerialUSB.print("package ");
+    //SerialUSB.println(pktnr);
+
+
   }
 
+  
   //Stop LoadecellStuff
   digitalWrite(LC_ON, LOW);
   digitalWrite(SELECT, LOW);
   digitalWrite(PDWN, LOW);
- 
+
+  
   // calculate sleeptime
-  int sleeptime = datalogtime - (millis() - loopstarttime)/1000;
-  SerialUSB.print("Sleeptime[s]:");
-  SerialUSB.println(sleeptime);
-  if(sleeptime > 0) {
+  int sleeptime = datalogtime - (millis() - loopstarttime) / 1000;
+  //SerialUSB.print("Sleeptime[s]:");
+  //SerialUSB.println(sleeptime);
+  if (sleeptime > 0) {
     powerdownfor(sleeptime);
   }
-    
+
 }
