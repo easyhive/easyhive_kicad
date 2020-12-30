@@ -34,8 +34,8 @@ char *countdown3 = "8g#,f#,d6,2c#.6,16c#6,16d6,16c#6,16b,1c#6,2p";
 const char *key = "9Udj81*";
 
 // Set the BoardID variable fo testing reasons, if you want a fixed BoardID even if board is flashed.
-int BoardID = 47;			// comment this line for generating a new BoardID
-bool fixBoardID = true;		// set this to false to have normal behaviour
+//int BoardID = 47;			// uncomment this line for fixed BoardID
+bool fixBoardID = false;		// set this to true for fixed BoardID
 
 // Set intervals for data logging and data sending [seconds] // due to watchdogtimer they result in multiples of 8
 int datasendtime =  15;
@@ -156,45 +156,7 @@ void check_USB_in(void){
     return;   
 }
 
-void init_LEDs(void){
-    pinMode(LED_RED, OUTPUT);
-    pinMode(LED_GREEN, OUTPUT);
-    pinMode(BUZZER, OUTPUT);
-    pinMode(LED_BLUE, OUTPUT);  
 
-    digitalWrite(LED_RED, HIGH);
-    digitalWrite(LED_GREEN, HIGH);
-    digitalWrite(LED_BLUE, HIGH);
-    return; 
-}
-
-void LEDs_off(void){
-    digitalWrite(LED_RED, HIGH);
-    digitalWrite(LED_GREEN, HIGH);
-    digitalWrite(LED_BLUE, HIGH);
-    return;
-}
-
-void LEDs_green(void){
-    digitalWrite(LED_RED, HIGH);
-    digitalWrite(LED_GREEN, LOW);
-    digitalWrite(LED_BLUE, HIGH);
-    return;
-}
-
-void LEDs_red(void){
-    digitalWrite(LED_RED, LOW);
-    digitalWrite(LED_GREEN, HIGH);
-    digitalWrite(LED_BLUE, HIGH);
-    return;
-}
-
-void LEDs_blue(void){
-    digitalWrite(LED_RED, HIGH);
-    digitalWrite(LED_GREEN, HIGH);
-    digitalWrite(LED_BLUE, LOW);
-    return;
-}
 void init_RTC(void){
 	rtc.begin();
 	//rtc.setEpoch(1585298319);
@@ -1102,6 +1064,7 @@ void read_sens_value(float* weight1, float* weight2, float* temp, float* volt, i
 	
     return; 
 }
+
 
 int get_sens_pointer(int offset){
 	int ans;

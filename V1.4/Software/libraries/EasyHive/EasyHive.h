@@ -37,12 +37,6 @@
 
 #define SENSOR_BUFFER_LEN 50
 
-void init_LEDs(void);
-void LEDs_off(void);
-void LEDs_green(void);
-void LEDs_red(void);
-void LEDs_blue(void);
-
 void init_RTC(void);
 void init_server_data(void);
 void init_BoardID(void);
