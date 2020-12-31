@@ -29,6 +29,10 @@ extern const char* forceOperator; // optional - depends on SIM / network
 int8_t SIGNAL;
 uint8_t BER;
 
+
+// only for debugging reasons:
+int shutdown_counter = 0;
+unsigned long starttime;
 /*
    The setup function. We only start the sensors here and initialize the board state
 */
@@ -39,6 +43,9 @@ uint8_t BER;
 
 void setup(void)
 {
+  shutdown_counter ++;
+  starttime = millis();
+  
   loopcounter = 0;
   // play_rtttl(startup);
   tone(BUZZER, 3950);
@@ -210,6 +217,8 @@ void loop(void)
   //SerialUSB.println(w_calib);
   //SerialUSB.println(w_offset);
 
+  bool loopreset; 
+  
   if (loopcounter >= datasendtime / datalogtime) {
     if (!nbiot.isConnected()) {
       if (!nbiot.connect(apn, cdp, forceOperator, 8)) {
@@ -229,24 +238,61 @@ void loop(void)
         int pointer_pos = get_sens_pointer(i);
         read_sens_value(&weight1, &weight2, &temp, &volt, &csq, &epoch, pointer_pos);
 
- 
+        SerialUSB.print("pointer_pos: ");
+        SerialUSB.println(pointer_pos);
+
+        SerialUSB.print("loopcounter: ");
+        SerialUSB.println(loopcounter);
+        SerialUSB.print("i from for: ");
+        SerialUSB.println(i);
 
         // SerialUSB.print("new String: ");
         // SerialUSB.println(result);
         //String msg = String(weight1) + "," + String(weight2) + "," + String(temp) + "," + String(volt) + "," + String(csq) + "," + String(BoardID) + "," + String(epoch) ;       
-        String msg = String(weight1) + "," + String(weight2) + "," + String(temp) + "," + String(freemem) + "," + String(csq) + "," + String(BoardID) + "," + String(epoch) ;
+        
+        // changed only for debugging reasons
+        // freemem: free memory
+        // shutdowncounter: did the scale restart?
+        // uptime = how long has the scale not been turned off?
+        unsigned long uptime = millis()-starttime;
+        String msg = String(shutdown_counter) + "," + String(uptime) + "," + String(temp) + "," + String(freemem) + "," + String(csq) + "," + String(BoardID) + "," + String(epoch) ;
+
+        SerialUSB.print("uptime: ");
+        SerialUSB.println(uptime);
+        SerialUSB.print("shutdown_counter: ");
+        SerialUSB.println(shutdown_counter);
 
       // SerialUSB.print("old String: ");
       // SerialUSB.println(msg);
 
 
         // if it's the first message:
-      sendMessageThroughUDP(msg.c_str());
-        // TODO: Was macht er denn falls Senden schiefläuft? Daten verwerfen?
-      
+      int success = sendMessageThroughUDP(msg.c_str());
+
+       
+       // TODO: Was macht er denn falls Senden schiefläuft? Daten verwerfen? 
+     
+     
+      SerialUSB.println("success of sending message through UDP: ");
+      SerialUSB.println(success);
+      if(success){
+       SerialUSB.println("Message was sent. Reset loopcounter.");
+       loopreset = true;
       }
+      else{
+       SerialUSB.print("Message could not be sent. Here we want to keep up the loopcounter.");
+       loopreset = false;
+      }
+        
+
+      
+      } // end of for loop
+    } // end of else (nbiot is connected)
+
+    // set the loopcounter to 0 only if the message has been sent sucessfully.
+    if(loopreset){
+      loopcounter = 0;  
     }
-    loopcounter = 0;
     
   SerialUSB.print("Free RAM end ");
   freemem = freeMemory();
