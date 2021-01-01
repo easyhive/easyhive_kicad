@@ -257,6 +257,8 @@ void loop(void)
         unsigned long uptime = millis()-starttime;
         String msg = String(shutdown_counter) + "," + String(uptime) + "," + String(temp) + "," + String(freemem) + "," + String(csq) + "," + String(BoardID) + "," + String(epoch) ;
 
+        SerialUSB.print("manipulated String msg: ");
+        SerialUSB.println(msg);       
         SerialUSB.print("uptime: ");
         SerialUSB.println(uptime);
         SerialUSB.print("shutdown_counter: ");
@@ -282,7 +284,16 @@ void loop(void)
       else{
        SerialUSB.print("Message could not be sent. Here we want to keep up the loopcounter.");
        loopreset = false;
+       // break oder continue??
+       break;
       }
+
+      //TODO: now it can happen that some data is lost.
+      // if the connection can be established in the last run through the for-loop
+      //  then the loopreset is true, even though there is still some unset data.
+      // maybe use an array of bools. One entry for each run through the for-loop?
+      // But this could leed to duplicated entries.
+      // maybe break, if no success?
         
 
       
@@ -300,8 +311,8 @@ void loop(void)
   }
 
 
-  
-  else {
+  // else = loopcounter < datasendtime/datalogtime
+  else {  
     //SerialUSB.print("logging data...");
     // write data to to the logs
 
@@ -328,8 +339,7 @@ void loop(void)
     //SerialUSB.print("package ");
     //SerialUSB.println(pktnr);
 
-
-  }
+  } // end of else (loopcounter < datasendtime/datalogtime)
 
   
   //Stop LoadecellStuff
