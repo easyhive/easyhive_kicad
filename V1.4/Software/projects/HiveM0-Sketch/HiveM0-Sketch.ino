@@ -138,8 +138,8 @@ void setup(void)
 /*
    Main function, get and show the temperature, weight and sleep, send data via NB-IoT
 */
-void loop(void)
-{
+void loop(void){
+
   unsigned long loopstarttime = millis();
   loopcounter++;
 
@@ -222,7 +222,7 @@ void loop(void)
   if (loopcounter >= datasendtime / datalogtime) {
     if (!nbiot.isConnected()) {
       if (!nbiot.connect(apn, cdp, forceOperator, 8)) {
-        DEBUG_STREAM.println("Failed to connect to the modem!");
+        DEBUG_STREAM.println("Failed to connect to the modem and/or network!");
       }
     }
     else {
@@ -264,80 +264,50 @@ void loop(void)
         SerialUSB.print("shutdown_counter: ");
         SerialUSB.println(shutdown_counter);
 
-      // SerialUSB.print("old String: ");
-      // SerialUSB.println(msg);
+        // SerialUSB.print("old String: ");
+        // SerialUSB.println(msg);
 
+        // try to send the message.
+        int success = sendMessageThroughUDP(msg.c_str());
 
-        // if it's the first message:
-      int success = sendMessageThroughUDP(msg.c_str());
+        SerialUSB.println("success of sending message through UDP: ");
+        SerialUSB.println(success);
 
-       
-       // TODO: Was macht er denn falls Senden schiefläuft? Daten verwerfen? 
-     
-     
-      SerialUSB.println("success of sending message through UDP: ");
-      SerialUSB.println(success);
-      if(success){
-       SerialUSB.println("Message was sent. Reset loopcounter.");
-       loopreset = true;
-      }
-      else{
-       SerialUSB.print("Message could not be sent. Here we want to keep up the loopcounter.");
-       loopreset = false;
-       // break oder continue??
-       break;
-      }
-
-      //TODO: now it can happen that some data is lost.
-      // if the connection can be established in the last run through the for-loop
-      //  then the loopreset is true, even though there is still some unset data.
-      // maybe use an array of bools. One entry for each run through the for-loop?
-      // But this could leed to duplicated entries.
-      // maybe break, if no success?
-        
-
-      
+        // if sending data to the server was successfull -> success = 1
+        if(success){
+         SerialUSB.println("Message was sent. Reset loopcounter.");
+         loopreset = true;  // bool to reset the loopcounter to 0 -> Data is not sent again. 
+        }
+        // else if sending data to the server was not possible -> success = 0
+        else{
+         SerialUSB.println("Message could not be sent. Here we want to keep up the loopcounter.");
+         loopreset = false; // do not reset loopcounter -> try to send data again by going through the for loop once additionally (next time)
+         break; // leave for loop. Sleep and try to send the data next time.
+        }
+          
       } // end of for loop
     } // end of else (nbiot is connected)
 
-    // set the loopcounter to 0 only if the message has been sent sucessfully.
+    // set the loopcounter to 0 only if all messages have been sent sucessfully.
     if(loopreset){
       loopcounter = 0;  
     }
-    
-  SerialUSB.print("Free RAM end ");
-  freemem = freeMemory();
-  SerialUSB.println(freemem);
-  }
+  } // end of: if (loopcounter >= datasendtime / datalogtime)
 
+  else {  // loopcounter < datasendtime/datalogtime
+    // if data is measured more often then sent, the data is stored in the sensobuffer arrays
 
-  // else = loopcounter < datasendtime/datalogtime
-  else {  
     //SerialUSB.print("logging data...");
-    // write data to to the logs
 
     float weight1 = 0;
     float weight2 = 0;
     float temp = 0;
     float volt = 0;
     int8_t csq = 0;
-    long pktnr = 0;
+    long epoch = 0;
 
     int pointer_pos = get_sens_pointer(0);
-    read_sens_value(&weight1, &weight2, &temp, &volt, &csq, &pktnr, pointer_pos);
-    //SerialUSB.println("\n ");
-    //SerialUSB.print("Temp: ");
-    //SerialUSB.println(temp);
-    //SerialUSB.print("Weight1 ");
-    //SerialUSB.println(weight1);
-    //SerialUSB.print("Weigh2   ");
-    //SerialUSB.println(weight2);
-    //SerialUSB.print("volt ");
-    //SerialUSB.println(volt);
-    //SerialUSB.print("signal ");
-    //SerialUSB.println(csq);
-    //SerialUSB.print("package ");
-    //SerialUSB.println(pktnr);
+    read_sens_value(&weight1, &weight2, &temp, &volt, &csq, &epoch, pointer_pos);
 
   } // end of else (loopcounter < datasendtime/datalogtime)
 
