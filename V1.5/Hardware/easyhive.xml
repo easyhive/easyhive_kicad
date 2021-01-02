@@ -1,0 +1,2116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>/home/easy/Documents/GitHub/easyhive_arduino/V1.5/Hardware/easyhive.sch</source>
+    <date>Sa 02 Jan 2021 21:24:48 CET</date>
+    <tool>Eeschema 5.1.8+dfsg1-1~bpo10+1</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>easyhive.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="IC1">
+      <value>ATSAMD21G</value>
+      <footprint>easyhive:TQFP48</footprint>
+      <fields>
+        <field name="MPN">TSAMD21G18A-AUT</field>
+        <field name="Manufacturer">Microchip Technology</field>
+      </fields>
+      <libsource lib="easyhive" part="ATSAMD21G" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>06F92037</tstamp>
+    </comp>
+    <comp ref="C2">
+      <value>1u</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>500D594B</tstamp>
+    </comp>
+    <comp ref="C3">
+      <value>15p</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5CBEC865</tstamp>
+    </comp>
+    <comp ref="C4">
+      <value>15p</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>7E167BDF</tstamp>
+    </comp>
+    <comp ref="C5">
+      <value>100n</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>F9108C4C</tstamp>
+    </comp>
+    <comp ref="C6">
+      <value>100n</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>FE64C8E2</tstamp>
+    </comp>
+    <comp ref="C7">
+      <value>100n</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>B9E0DE35</tstamp>
+    </comp>
+    <comp ref="C1">
+      <value>100n</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>218CB388</tstamp>
+    </comp>
+    <comp ref="C8">
+      <value>10u</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>FA2D35D6</tstamp>
+    </comp>
+    <comp ref="L1">
+      <value>SM-1206</value>
+      <footprint>easyhive:SM-1206</footprint>
+      <fields>
+        <field name="Description">auch anderer Hersteller moeglich</field>
+        <field name="MPN">742792141</field>
+        <field name="Manufacturer">WURTH</field>
+      </fields>
+      <libsource lib="easyhive" part="SM-1206" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>4CAB314C</tstamp>
+    </comp>
+    <comp ref="C9">
+      <value>10u</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>BFDA6602</tstamp>
+    </comp>
+    <comp ref="C10">
+      <value>100p</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>83DF0E27</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>330</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="RESISTOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>D8E9AFF9</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>2k2</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="RESISTOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>187662F0</tstamp>
+    </comp>
+    <comp ref="D1">
+      <value>MBR0520LT</value>
+      <footprint>easyhive:SOD123</footprint>
+      <fields>
+        <field name="Description">auch anderer Hersteller moeglich</field>
+        <field name="MPN">MBR0520LT</field>
+        <field name="Manufacturer">ON Semiconductor</field>
+      </fields>
+      <libsource lib="easyhive" part="MBR0520LT" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>8D141E84</tstamp>
+    </comp>
+    <comp ref="D2">
+      <value>MBR0520LT</value>
+      <footprint>easyhive:SOD123</footprint>
+      <fields>
+        <field name="Description">auch anderer Hersteller moeglich</field>
+        <field name="MPN">MBR0520LT</field>
+        <field name="Manufacturer">ON Semiconductor</field>
+      </fields>
+      <libsource lib="easyhive" part="MBR0520LT" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>20478EC3</tstamp>
+    </comp>
+    <comp ref="C11">
+      <value>1u</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6062EDB6</tstamp>
+    </comp>
+    <comp ref="C12">
+      <value>4u7</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>C4EBF913</tstamp>
+    </comp>
+    <comp ref="C13">
+      <value>4u7</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>0C35E504</tstamp>
+    </comp>
+    <comp ref="X1">
+      <value>USB_MICRO_SHIELD</value>
+      <footprint>easyhive:USBMICRO</footprint>
+      <fields>
+        <field name="MPN">10118193-0001LF</field>
+        <field name="Manufacturer">Amphenol ICC</field>
+      </fields>
+      <libsource lib="easyhive" part="USB_MICRO_SHIELD" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>753049C4</tstamp>
+    </comp>
+    <comp ref="JP1">
+      <value>Solar</value>
+      <footprint>easyhive:1X02_2MM_klein</footprint>
+      <fields>
+        <field name="Description">in Stueckliste loeschen</field>
+      </fields>
+      <libsource lib="easyhive" part="M02PTH-2MM" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>B86FD4DE</tstamp>
+    </comp>
+    <comp ref="JP2">
+      <value>Battery</value>
+      <footprint>easyhive:1X03-2MM_klein</footprint>
+      <fields>
+        <field name="Description">in Stueckliste loeschen</field>
+      </fields>
+      <libsource lib="easyhive" part="M03PTH-2MM" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>E6E2D458</tstamp>
+    </comp>
+    <comp ref="IC2">
+      <value>BQ2407X</value>
+      <footprint>easyhive:VQFN16</footprint>
+      <fields>
+        <field name="MPN">BQ24072RGTT </field>
+        <field name="Manufacturer">TI</field>
+      </fields>
+      <libsource lib="easyhive" part="BQ2407X" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>541775CA</tstamp>
+    </comp>
+    <comp ref="R3">
+      <value>0R</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="RESISTOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>79012833</tstamp>
+    </comp>
+    <comp ref="R4">
+      <value>1k18</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="RESISTOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>7B5DEC26</tstamp>
+    </comp>
+    <comp ref="R5">
+      <value>680R</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="RESISTOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60A68988</tstamp>
+    </comp>
+    <comp ref="IC3">
+      <value>ADS1232</value>
+      <footprint>easyhive:TSSOP24</footprint>
+      <fields>
+        <field name="MPN">ADS1232IPWR</field>
+        <field name="Manufacturer">TI</field>
+      </fields>
+      <libsource lib="easyhive" part="ADS1232" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5ED25CA7</tstamp>
+    </comp>
+    <comp ref="C14">
+      <value>100n</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>7E2E4EF0</tstamp>
+    </comp>
+    <comp ref="C15">
+      <value>100n</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>9DEF2EB6</tstamp>
+    </comp>
+    <comp ref="Q1">
+      <value>32768 Hz</value>
+      <footprint>easyhive:FC135</footprint>
+      <libsource lib="easyhive" part="FC135" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>3F527EB1</tstamp>
+    </comp>
+    <comp ref="IC4">
+      <value>DS18B20U</value>
+      <footprint>easyhive:UMAX8</footprint>
+      <fields>
+        <field name="MPN">DS18B20U+</field>
+        <field name="Manufacturer">Maxim Integrated</field>
+      </fields>
+      <libsource lib="easyhive" part="DS18B20U" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>46657C43</tstamp>
+    </comp>
+    <comp ref="IC5">
+      <value>XC6220B331</value>
+      <footprint>easyhive:SOT25</footprint>
+      <fields>
+        <field name="MPN">XC6220B331MR-G</field>
+        <field name="Manufacturer">Torex Semiconductor</field>
+      </fields>
+      <libsource lib="easyhive" part="XC6220" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>16F8D089</tstamp>
+    </comp>
+    <comp ref="C16">
+      <value>10u</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>7A36C4F5</tstamp>
+    </comp>
+    <comp ref="C17">
+      <value>10u</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>A003222B</tstamp>
+    </comp>
+    <comp ref="K1">
+      <value>693043020611</value>
+      <footprint>easyhive:693043020611</footprint>
+      <fields>
+        <field name="MPN">693043020611</field>
+        <field name="Manufacturer">WURTH</field>
+      </fields>
+      <libsource lib="easyhive" part="693043020611" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>46E35674</tstamp>
+    </comp>
+    <comp ref="C18">
+      <value>47p</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>E152B20A</tstamp>
+    </comp>
+    <comp ref="C19">
+      <value>47p</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>EE6C32E0</tstamp>
+    </comp>
+    <comp ref="C20">
+      <value>47p</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>AE9FC088</tstamp>
+    </comp>
+    <comp ref="C21">
+      <value>47p</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>BA1404BC</tstamp>
+    </comp>
+    <comp ref="C22">
+      <value>100n</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>66C8AD90</tstamp>
+    </comp>
+    <comp ref="D5">
+      <value>PESD0402-140</value>
+      <footprint>easyhive:0402-TVS</footprint>
+      <fields>
+        <field name="Description">auch anderer Hersteller moeglich</field>
+        <field name="MPN">PESD0402-140</field>
+        <field name="Manufacturer">Littelfuse</field>
+      </fields>
+      <libsource lib="easyhive" part="PESD0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>A6206A74</tstamp>
+    </comp>
+    <comp ref="D4">
+      <value>PESD0402-140</value>
+      <footprint>easyhive:0402-TVS</footprint>
+      <fields>
+        <field name="Description">auch anderer Hersteller moeglich</field>
+        <field name="MPN">PESD0402-140</field>
+        <field name="Manufacturer">Littelfuse</field>
+      </fields>
+      <libsource lib="easyhive" part="PESD0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>09728D9F</tstamp>
+    </comp>
+    <comp ref="D6">
+      <value>PESD0402-140</value>
+      <footprint>easyhive:0402-TVS</footprint>
+      <fields>
+        <field name="Description">auch anderer Hersteller moeglich</field>
+        <field name="MPN">PESD0402-140</field>
+        <field name="Manufacturer">Littelfuse</field>
+      </fields>
+      <libsource lib="easyhive" part="PESD0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>D93FABDF</tstamp>
+    </comp>
+    <comp ref="D7">
+      <value>PESD0402-140</value>
+      <footprint>easyhive:0402-TVS</footprint>
+      <fields>
+        <field name="Description">auch anderer Hersteller moeglich</field>
+        <field name="MPN">PESD0402-140</field>
+        <field name="Manufacturer">Littelfuse</field>
+      </fields>
+      <libsource lib="easyhive" part="PESD0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>B138A71A</tstamp>
+    </comp>
+    <comp ref="D8">
+      <value>PESD0402-140</value>
+      <footprint>easyhive:0402-TVS</footprint>
+      <fields>
+        <field name="Description">auch anderer Hersteller moeglich</field>
+        <field name="MPN">PESD0402-140</field>
+        <field name="Manufacturer">Littelfuse</field>
+      </fields>
+      <libsource lib="easyhive" part="PESD0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>23304B1F</tstamp>
+    </comp>
+    <comp ref="D9">
+      <value>PESD0402-140</value>
+      <footprint>easyhive:0402-TVS</footprint>
+      <fields>
+        <field name="Description">auch anderer Hersteller moeglich</field>
+        <field name="MPN">PESD0402-140</field>
+        <field name="Manufacturer">Littelfuse</field>
+      </fields>
+      <libsource lib="easyhive" part="PESD0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>D46E3E7D</tstamp>
+    </comp>
+    <comp ref="L2">
+      <value>SM-1206</value>
+      <footprint>easyhive:SM-1206</footprint>
+      <fields>
+        <field name="Description">auch anderer Hersteller moeglich</field>
+        <field name="MPN">742792141</field>
+        <field name="Manufacturer">WURTH</field>
+      </fields>
+      <libsource lib="easyhive" part="SM-1206" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>77B97637</tstamp>
+    </comp>
+    <comp ref="D10">
+      <value>PESD0402-140</value>
+      <footprint>easyhive:0402-TVS</footprint>
+      <fields>
+        <field name="Description">auch anderer Hersteller moeglich</field>
+        <field name="MPN">PESD0402-140</field>
+        <field name="Manufacturer">Littelfuse</field>
+      </fields>
+      <libsource lib="easyhive" part="PESD0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>9B2F606E</tstamp>
+    </comp>
+    <comp ref="C23">
+      <value>4u7</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>E4F1DE8A</tstamp>
+    </comp>
+    <comp ref="C24">
+      <value>100n</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5D02F724</tstamp>
+    </comp>
+    <comp ref="C25">
+      <value>56p</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>3EDF9974</tstamp>
+    </comp>
+    <comp ref="C26">
+      <value>15p</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>98E66A8C</tstamp>
+    </comp>
+    <comp ref="R11">
+      <value>0R</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="RESISTOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>E32716AC</tstamp>
+    </comp>
+    <comp ref="R12">
+      <value>0R</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="RESISTOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>518E2784</tstamp>
+    </comp>
+    <comp ref="R13">
+      <value>2k</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="RESISTOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>10273848</tstamp>
+    </comp>
+    <comp ref="R14">
+      <value>2k</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="RESISTOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>EB687608</tstamp>
+    </comp>
+    <comp ref="F1">
+      <value>6V/0.5A</value>
+      <footprint>easyhive:1206</footprint>
+      <fields>
+        <field name="Description">auch anderer Hersteller moeglich</field>
+        <field name="MPN">0ZCJ0050FF2G</field>
+        <field name="Manufacturer">Bel Fuse Inc</field>
+      </fields>
+      <libsource lib="easyhive" part="PPTC_HALF-AMP" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>F3D3D5FD</tstamp>
+    </comp>
+    <comp ref="H1">
+      <value>MOUNT-PAD-ROUND2.8</value>
+      <footprint>easyhive:2,8-PAD</footprint>
+      <fields>
+        <field name="Description">in Stueckliste loeschen</field>
+      </fields>
+      <libsource lib="easyhive" part="MOUNT-PAD-ROUND2.8" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>04536B83</tstamp>
+    </comp>
+    <comp ref="H2">
+      <value>MOUNT-PAD-ROUND2.8</value>
+      <footprint>easyhive:2,8-PAD</footprint>
+      <fields>
+        <field name="Description">in Stueckliste loeschen</field>
+      </fields>
+      <libsource lib="easyhive" part="MOUNT-PAD-ROUND2.8" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>AF5FF242</tstamp>
+    </comp>
+    <comp ref="H3">
+      <value>MOUNT-PAD-ROUND2.8</value>
+      <footprint>easyhive:2,8-PAD</footprint>
+      <fields>
+        <field name="Description">in Stueckliste loeschen</field>
+      </fields>
+      <libsource lib="easyhive" part="MOUNT-PAD-ROUND2.8" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>9A513AC4</tstamp>
+    </comp>
+    <comp ref="H4">
+      <value>MOUNT-PAD-ROUND2.8</value>
+      <footprint>easyhive:2,8-PAD</footprint>
+      <fields>
+        <field name="Description">in Stueckliste loeschen</field>
+      </fields>
+      <libsource lib="easyhive" part="MOUNT-PAD-ROUND2.8" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>DE812661</tstamp>
+    </comp>
+    <comp ref="JP6">
+      <value>I2C</value>
+      <footprint>easyhive:1X04-2MM_klein</footprint>
+      <fields>
+        <field name="Description">in Stueckliste loeschen</field>
+      </fields>
+      <libsource lib="easyhive" part="M04PTH-2MM" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>A41E4F7D</tstamp>
+    </comp>
+    <comp ref="JP5">
+      <value>SWD</value>
+      <footprint>easyhive:1X05-2MM_klein</footprint>
+      <fields>
+        <field name="Description">in Stueckliste loeschen</field>
+      </fields>
+      <libsource lib="easyhive" part="M05PTH-2MM" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>4DFCE28F</tstamp>
+    </comp>
+    <comp ref="JP7">
+      <value>I2S</value>
+      <footprint>easyhive:1X05-2MM_klein</footprint>
+      <fields>
+        <field name="Description">in Stueckliste loeschen</field>
+      </fields>
+      <libsource lib="easyhive" part="M05PTH-2MM" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>D7649E70</tstamp>
+    </comp>
+    <comp ref="P1">
+      <value>PKMCS</value>
+      <footprint>easyhive:PKMCS_BUZZER</footprint>
+      <fields>
+        <field name="MPN">PKMCS0909E4000-R1 </field>
+        <field name="Manufacturer">Murata</field>
+      </fields>
+      <libsource lib="easyhive" part="PKMCS" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>F6E8D358</tstamp>
+    </comp>
+    <comp ref="C27">
+      <value>10n</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>29E2B3A1</tstamp>
+    </comp>
+    <comp ref="R16">
+      <value>4M7</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="RESISTOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>1FAE1296</tstamp>
+    </comp>
+    <comp ref="R17">
+      <value>10M</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="RESISTOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>EE898AF1</tstamp>
+    </comp>
+    <comp ref="C28">
+      <value>100n</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>1AF00DE7</tstamp>
+    </comp>
+    <comp ref="R18">
+      <value>4k7</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="RESISTOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>7A845A96</tstamp>
+    </comp>
+    <comp ref="TP1">
+      <value>TPTP08R</value>
+      <footprint>easyhive:TP08R</footprint>
+      <fields>
+        <field name="Description">in Stueckliste loeschen</field>
+      </fields>
+      <libsource lib="easyhive" part="TPTP08R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>4FABACB0</tstamp>
+    </comp>
+    <comp ref="TP6">
+      <value>TPTP08R</value>
+      <footprint>easyhive:TP08R</footprint>
+      <fields>
+        <field name="Description">in Stueckliste loeschen</field>
+      </fields>
+      <libsource lib="easyhive" part="TPTP08R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>3B17FAA9</tstamp>
+    </comp>
+    <comp ref="TP13">
+      <value>TPTP08R</value>
+      <footprint>easyhive:TP08R</footprint>
+      <fields>
+        <field name="Description">in Stueckliste loeschen</field>
+      </fields>
+      <libsource lib="easyhive" part="TPTP08R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>CC4C750E</tstamp>
+    </comp>
+    <comp ref="TP9">
+      <value>TPTP08R</value>
+      <footprint>easyhive:TP08R</footprint>
+      <fields>
+        <field name="Description">in Stueckliste loeschen</field>
+      </fields>
+      <libsource lib="easyhive" part="TPTP08R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>0FABEF46</tstamp>
+    </comp>
+    <comp ref="D11">
+      <value>PESD0402-140</value>
+      <footprint>easyhive:0402-TVS</footprint>
+      <fields>
+        <field name="Description">auch anderer Hersteller moeglich</field>
+        <field name="MPN">PESD0402-140</field>
+        <field name="Manufacturer">Littelfuse</field>
+      </fields>
+      <libsource lib="easyhive" part="PESD0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6F5059DD</tstamp>
+    </comp>
+    <comp ref="D12">
+      <value>PESD0402-140</value>
+      <footprint>easyhive:0402-TVS</footprint>
+      <fields>
+        <field name="Description">auch anderer Hersteller moeglich</field>
+        <field name="MPN">PESD0402-140</field>
+        <field name="Manufacturer">Littelfuse</field>
+      </fields>
+      <libsource lib="easyhive" part="PESD0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>F209B7FF</tstamp>
+    </comp>
+    <comp ref="D13">
+      <value>PESD0402-140</value>
+      <footprint>easyhive:0402-TVS</footprint>
+      <fields>
+        <field name="Description">auch anderer Hersteller moeglich</field>
+        <field name="MPN">PESD0402-140</field>
+        <field name="Manufacturer">Littelfuse</field>
+      </fields>
+      <libsource lib="easyhive" part="PESD0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>CE088552</tstamp>
+    </comp>
+    <comp ref="D14">
+      <value>PESD0402-140</value>
+      <footprint>easyhive:0402-TVS</footprint>
+      <fields>
+        <field name="Description">auch anderer Hersteller moeglich</field>
+        <field name="MPN">PESD0402-140</field>
+        <field name="Manufacturer">Littelfuse</field>
+      </fields>
+      <libsource lib="easyhive" part="PESD0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>C78421B9</tstamp>
+    </comp>
+    <comp ref="TP10">
+      <value>TPTP08R</value>
+      <footprint>easyhive:TP08R</footprint>
+      <fields>
+        <field name="Description">in Stueckliste loeschen</field>
+      </fields>
+      <libsource lib="easyhive" part="TPTP08R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>D4BC7ECF</tstamp>
+    </comp>
+    <comp ref="TP11">
+      <value>TPTP08R</value>
+      <footprint>easyhive:TP08R</footprint>
+      <fields>
+        <field name="Description">in Stueckliste loeschen</field>
+      </fields>
+      <libsource lib="easyhive" part="TPTP08R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>89F50E62</tstamp>
+    </comp>
+    <comp ref="TP12">
+      <value>TPTP08R</value>
+      <footprint>easyhive:TP08R</footprint>
+      <fields>
+        <field name="Description">in Stueckliste loeschen</field>
+      </fields>
+      <libsource lib="easyhive" part="TPTP08R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6B48D3A3</tstamp>
+    </comp>
+    <comp ref="R15">
+      <value>NTC 103AT</value>
+      <footprint>easyhive:C0402</footprint>
+      <fields>
+        <field name="Description">auch anderer Hersteller moeglich</field>
+        <field name="MPN"> ABNTC-0402-103J-4050F-T </field>
+        <field name="Manufacturer">Abracon</field>
+      </fields>
+      <libsource lib="easyhive" part="RESISTOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>20606541</tstamp>
+    </comp>
+    <comp ref="JP8">
+      <value>ext. DS18B20</value>
+      <footprint>easyhive:1X03-2MM_re_klein</footprint>
+      <fields>
+        <field name="Description">in Stueckliste loeschen</field>
+      </fields>
+      <libsource lib="easyhive" part="M03PTH-2MM" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>7722F17E</tstamp>
+    </comp>
+    <comp ref="IC7">
+      <value>TPS22919</value>
+      <footprint>easyhive:sot-sc70-6</footprint>
+      <fields>
+        <field name="MPN">TPS22919DCKR</field>
+        <field name="Manufacturer">TI</field>
+      </fields>
+      <libsource lib="easyhive" part="TPS22919" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5D981900</tstamp>
+    </comp>
+    <comp ref="C30">
+      <value>1u</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5D8E32D5</tstamp>
+    </comp>
+    <comp ref="U1">
+      <value>SN74AVC4T774PWG4</value>
+      <footprint>easyhive:PW16</footprint>
+      <fields>
+        <field name="MPN">SN74AVC4T774PWG4</field>
+        <field name="Manufacturer">TI</field>
+      </fields>
+      <libsource lib="easyhive" part="SN74AVC4T774PWG4" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FAFD30C</tstamp>
+    </comp>
+    <comp ref="C31">
+      <value>1u</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>607F37AE</tstamp>
+    </comp>
+    <comp ref="C32">
+      <value>1u</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>607F3E32</tstamp>
+    </comp>
+    <comp ref="R25">
+      <value>1M</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="RESISTOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FB2E98B</tstamp>
+    </comp>
+    <comp ref="R21">
+      <value>0R</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="RESISTOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FE2F473</tstamp>
+    </comp>
+    <comp ref="R22">
+      <value>0R</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="RESISTOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FE3011D</tstamp>
+    </comp>
+    <comp ref="R23">
+      <value>0R</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="RESISTOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FE30577</tstamp>
+    </comp>
+    <comp ref="R24">
+      <value>0R</value>
+      <footprint>easyhive:C0402</footprint>
+      <libsource lib="easyhive" part="RESISTOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FE307E3</tstamp>
+    </comp>
+    <comp ref="J2">
+      <value>U.FL(2)</value>
+      <footprint>easyhive:U.FL</footprint>
+      <fields>
+        <field name="Description">nicht bestuecken</field>
+        <field name="MPN">  U.FL-R-SMT-1(01) </field>
+        <field name="Manufacturer">Hirose</field>
+      </fields>
+      <libsource lib="easyhive" part="U.FL" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FE990DA</tstamp>
+    </comp>
+    <comp ref="IC6">
+      <value>SARA-N310</value>
+      <footprint>easyhive:SARA-N3</footprint>
+      <fields>
+        <field name="Description">wird von easyhive beigestellt</field>
+        <field name="MPN">Sara N310</field>
+        <field name="Manufacturer">Ublox</field>
+      </fields>
+      <libsource lib="easyhive" part="SARA-N3" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FB91FEB</tstamp>
+    </comp>
+    <comp ref="TP16">
+      <value>TPTP08R</value>
+      <footprint>easyhive:TP08R</footprint>
+      <fields>
+        <field name="Description">in Stueckliste loeschen</field>
+      </fields>
+      <libsource lib="easyhive" part="TPTP08R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FB92E07</tstamp>
+    </comp>
+    <comp ref="TP19">
+      <value>TPTP08R</value>
+      <footprint>easyhive:TP08R</footprint>
+      <fields>
+        <field name="Description">in Stueckliste loeschen</field>
+      </fields>
+      <libsource lib="easyhive" part="TPTP08R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FCD1F38</tstamp>
+    </comp>
+    <comp ref="JP3">
+      <value>JST PH</value>
+      <footprint>Connector_JST:JST_PH_B10B-PH-SM4-TB_1x10-1MP_P2.00mm_Vertical</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="MPN">PH_B10B-PH-SM4-TB</field>
+        <field name="Manufacturer">JST</field>
+      </fields>
+      <libsource lib="easyhive" part="M10JST" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FCD50C8</tstamp>
+    </comp>
+    <comp ref="C29">
+      <value>100u</value>
+      <footprint>easyhive:1206</footprint>
+      <fields>
+        <field name="Description">oder Tantal T490A107M006ATE800</field>
+        <field name="MPN">GRM31CR60J107ME39L</field>
+        <field name="Manufacturer">Murata</field>
+      </fields>
+      <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FF08691</tstamp>
+    </comp>
+    <comp ref="Q3">
+      <value>DTC123JET1G</value>
+      <footprint>easyhive:SC75_SOT416</footprint>
+      <datasheet>http://www.onsemi.cn/pub_link/Collateral/DTC123J-D.PDF</datasheet>
+      <fields>
+        <field name="Description">auch anderer Hersteller moeglich</field>
+        <field name="MPN">DTC123JET1G</field>
+        <field name="Manufacturer">ON Semiconductor</field>
+        <field name="package">SC-75-3-463-01</field>
+      </fields>
+      <libsource lib="easyhive" part="DTC123JET1G" description="DTC123JET1G"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FF60DC0</tstamp>
+    </comp>
+    <comp ref="Q2">
+      <value>DTC123JET1G</value>
+      <footprint>easyhive:SC75_SOT416</footprint>
+      <datasheet>http://www.onsemi.cn/pub_link/Collateral/DTC123J-D.PDF</datasheet>
+      <fields>
+        <field name="Description">auch anderer Hersteller moeglich</field>
+        <field name="MPN">DTC123JET1G</field>
+        <field name="Manufacturer">ON Semiconductor</field>
+        <field name="package">SC-75-3-463-01</field>
+      </fields>
+      <libsource lib="easyhive" part="DTC123JET1G" description="DTC123JET1G"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FF6815B</tstamp>
+    </comp>
+    <comp ref="J1">
+      <value>U.FL</value>
+      <footprint>easyhive:U.FL</footprint>
+      <fields>
+        <field name="MPN">  U.FL-R-SMT-1(01) </field>
+        <field name="Manufacturer">Hirose</field>
+      </fields>
+      <libsource lib="easyhive" part="U.FL" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>FD71C335</tstamp>
+    </comp>
+    <comp ref="TP2">
+      <value>TPTP08R</value>
+      <footprint>easyhive:TP08R</footprint>
+      <fields>
+        <field name="Description">in Stueckliste loeschen</field>
+      </fields>
+      <libsource lib="easyhive" part="TPTP08R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>39A48B5B</tstamp>
+    </comp>
+    <comp ref="TP3">
+      <value>TPTP08R</value>
+      <footprint>easyhive:TP08R</footprint>
+      <fields>
+        <field name="Description">in Stueckliste loeschen</field>
+      </fields>
+      <libsource lib="easyhive" part="TPTP08R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>0521E9FA</tstamp>
+    </comp>
+    <comp ref="JP4">
+      <value>M02-JST-2MM-SMT</value>
+      <footprint>easyhive:1X02_2MM_Pad_only</footprint>
+      <fields>
+        <field name="Description">in Stueckliste loeschen</field>
+      </fields>
+      <libsource lib="easyhive" part="M02-JST-2MM-SMT" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6030887E</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="easyhive" part="693043020611">
+      <fields>
+        <field name="Reference">K</field>
+        <field name="Value">693043020611</field>
+      </fields>
+      <pins>
+        <pin num="C1" name="1_VCC" type="unspc"/>
+        <pin num="C2" name="2_RST" type="unspc"/>
+        <pin num="C3" name="3_CLK" type="unspc"/>
+        <pin num="C5" name="5_GND" type="unspc"/>
+        <pin num="C6" name="6_VPP" type="unspc"/>
+        <pin num="C7" name="7_I/O" type="unspc"/>
+        <pin num="Z1" name="GND@1" type="unspc"/>
+        <pin num="Z2" name="GND@1" type="unspc"/>
+        <pin num="Z3" name="GND@1" type="unspc"/>
+        <pin num="Z4" name="GND@2" type="unspc"/>
+        <pin num="Z5" name="GND@2" type="unspc"/>
+        <pin num="Z6" name="GND@2" type="unspc"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="ADS1232">
+      <fields>
+        <field name="Reference">IC</field>
+        <field name="Value">ADS1232</field>
+      </fields>
+      <pins>
+        <pin num="1" name="DVDD" type="unspc"/>
+        <pin num="2" name="DGND" type="unspc"/>
+        <pin num="3" name="CLKIN/XTAL1" type="unspc"/>
+        <pin num="4" name="XTAL2" type="unspc"/>
+        <pin num="5" name="DGND" type="unspc"/>
+        <pin num="6" name="DGND" type="unspc"/>
+        <pin num="7" name="TEMP" type="unspc"/>
+        <pin num="8" name="A0" type="unspc"/>
+        <pin num="9" name="CAP1" type="unspc"/>
+        <pin num="10" name="CAP2" type="unspc"/>
+        <pin num="11" name="AINP1" type="unspc"/>
+        <pin num="12" name="AINN1" type="unspc"/>
+        <pin num="13" name="AINN2" type="unspc"/>
+        <pin num="14" name="AINP2" type="unspc"/>
+        <pin num="15" name="REFN" type="unspc"/>
+        <pin num="16" name="REFP" type="unspc"/>
+        <pin num="17" name="AGND" type="unspc"/>
+        <pin num="18" name="AVDD" type="unspc"/>
+        <pin num="19" name="GAIN0" type="unspc"/>
+        <pin num="20" name="GAIN1" type="unspc"/>
+        <pin num="21" name="SPEED" type="unspc"/>
+        <pin num="22" name="~PDWN" type="unspc"/>
+        <pin num="23" name="SCLK" type="unspc"/>
+        <pin num="24" name="~DRDY~/DOUT" type="unspc"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="ATSAMD21G">
+      <fields>
+        <field name="Reference">IC</field>
+        <field name="Value">ATSAMD21G</field>
+      </fields>
+      <pins>
+        <pin num="1" name="PA00" type="unspc"/>
+        <pin num="2" name="PA01" type="unspc"/>
+        <pin num="3" name="PA02" type="unspc"/>
+        <pin num="4" name="PA03" type="unspc"/>
+        <pin num="5" name="GNDANA" type="unspc"/>
+        <pin num="6" name="VDDANA" type="unspc"/>
+        <pin num="7" name="PB08" type="unspc"/>
+        <pin num="8" name="PB09" type="unspc"/>
+        <pin num="9" name="PA04" type="unspc"/>
+        <pin num="10" name="PA05" type="unspc"/>
+        <pin num="11" name="PA06" type="unspc"/>
+        <pin num="12" name="PA07" type="unspc"/>
+        <pin num="13" name="PA08" type="unspc"/>
+        <pin num="14" name="PA09" type="unspc"/>
+        <pin num="15" name="PA10" type="unspc"/>
+        <pin num="16" name="PA11" type="unspc"/>
+        <pin num="17" name="VDDIO1" type="unspc"/>
+        <pin num="18" name="GND1" type="unspc"/>
+        <pin num="19" name="PB10" type="unspc"/>
+        <pin num="20" name="PB11" type="unspc"/>
+        <pin num="21" name="PA12" type="unspc"/>
+        <pin num="22" name="PA13" type="unspc"/>
+        <pin num="23" name="PA14" type="unspc"/>
+        <pin num="24" name="PA15" type="unspc"/>
+        <pin num="25" name="PA16" type="unspc"/>
+        <pin num="26" name="PA17" type="unspc"/>
+        <pin num="27" name="PA18" type="unspc"/>
+        <pin num="28" name="PA19" type="unspc"/>
+        <pin num="29" name="PA20" type="unspc"/>
+        <pin num="30" name="PA21" type="unspc"/>
+        <pin num="31" name="PA22" type="unspc"/>
+        <pin num="32" name="PA23" type="unspc"/>
+        <pin num="33" name="PA24" type="unspc"/>
+        <pin num="34" name="PA25" type="unspc"/>
+        <pin num="35" name="GND2" type="unspc"/>
+        <pin num="36" name="VDDIO2" type="unspc"/>
+        <pin num="37" name="PB22" type="unspc"/>
+        <pin num="38" name="PB23" type="unspc"/>
+        <pin num="39" name="PA27" type="unspc"/>
+        <pin num="40" name="~RESET" type="unspc"/>
+        <pin num="41" name="PA28" type="unspc"/>
+        <pin num="42" name="GND3" type="unspc"/>
+        <pin num="43" name="VDDCORE" type="unspc"/>
+        <pin num="44" name="VDDIN" type="unspc"/>
+        <pin num="45" name="PA30" type="unspc"/>
+        <pin num="46" name="PA31" type="unspc"/>
+        <pin num="47" name="PB02" type="unspc"/>
+        <pin num="48" name="PB03" type="unspc"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="BQ2407X">
+      <fields>
+        <field name="Reference">IC</field>
+        <field name="Value">BQ2407X</field>
+      </fields>
+      <pins>
+        <pin num="1" name="TS" type="unspc"/>
+        <pin num="2" name="BAT" type="unspc"/>
+        <pin num="3" name="BAT" type="unspc"/>
+        <pin num="4" name="~CE" type="unspc"/>
+        <pin num="5" name="EN2" type="unspc"/>
+        <pin num="6" name="EN1" type="unspc"/>
+        <pin num="7" name="~PGOOD" type="unspc"/>
+        <pin num="8" name="VSS" type="unspc"/>
+        <pin num="9" name="~CHG" type="unspc"/>
+        <pin num="10" name="OUT" type="unspc"/>
+        <pin num="11" name="OUT" type="unspc"/>
+        <pin num="12" name="ILIM" type="unspc"/>
+        <pin num="13" name="IN" type="unspc"/>
+        <pin num="14" name="TMR" type="unspc"/>
+        <pin num="15" name="TD" type="unspc"/>
+        <pin num="16" name="ISET" type="unspc"/>
+        <pin num="17" name="TERMAL" type="unspc"/>
+        <pin num="18" name="TERMAL" type="unspc"/>
+        <pin num="V1" name="TERMAL" type="unspc"/>
+        <pin num="V2" name="TERMAL" type="unspc"/>
+        <pin num="V3" name="TERMAL" type="unspc"/>
+        <pin num="V4" name="TERMAL" type="unspc"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="CAPACITOR-0402">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">CAPACITOR-0402</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="DS18B20U">
+      <fields>
+        <field name="Reference">IC</field>
+        <field name="Value">DS18B20U</field>
+      </fields>
+      <pins>
+        <pin num="1" name="DQ" type="unspc"/>
+        <pin num="4" name="GND" type="unspc"/>
+        <pin num="8" name="VDD" type="unspc"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="DTC123JET1G">
+      <description>DTC123JET1G</description>
+      <docs>http://www.onsemi.cn/pub_link/Collateral/DTC123J-D.PDF</docs>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">DTC123JET1G</field>
+        <field name="Footprint">easyhive:SC75_SOT416</field>
+        <field name="package">SC-75-3-463-01</field>
+      </fields>
+      <pins>
+        <pin num="1" name="B" type="passive"/>
+        <pin num="2" name="E" type="passive"/>
+        <pin num="3" name="C" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="FC135">
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">FC135</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="M02-JST-2MM-SMT">
+      <fields>
+        <field name="Reference">JP</field>
+        <field name="Value">M02-JST-2MM-SMT</field>
+      </fields>
+      <pins>
+        <pin num="1" name="2" type="passive"/>
+        <pin num="2" name="1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="M02PTH-2MM">
+      <fields>
+        <field name="Reference">JP</field>
+        <field name="Value">M02PTH-2MM</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="M03PTH-2MM">
+      <fields>
+        <field name="Reference">JP</field>
+        <field name="Value">M03PTH-2MM</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="M04PTH-2MM">
+      <fields>
+        <field name="Reference">JP</field>
+        <field name="Value">M04PTH-2MM</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+        <pin num="4" name="4" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="M05PTH-2MM">
+      <fields>
+        <field name="Reference">JP</field>
+        <field name="Value">M05PTH-2MM</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+        <pin num="4" name="4" type="passive"/>
+        <pin num="5" name="5" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="M10JST">
+      <fields>
+        <field name="Reference">JP</field>
+        <field name="Value">M10JST</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+        <pin num="4" name="4" type="passive"/>
+        <pin num="5" name="5" type="passive"/>
+        <pin num="6" name="6" type="passive"/>
+        <pin num="7" name="7" type="passive"/>
+        <pin num="8" name="8" type="passive"/>
+        <pin num="9" name="9" type="passive"/>
+        <pin num="10" name="10" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="MBR0520LT">
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">MBR0520LT</field>
+      </fields>
+      <pins>
+        <pin num="A" name="A" type="passive"/>
+        <pin num="C" name="C" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="MOUNT-PAD-ROUND2.8">
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">MOUNT-PAD-ROUND2.8</field>
+      </fields>
+      <pins>
+        <pin num="B2,8" name="MOUNT" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="PESD0402">
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">PESD0402</field>
+      </fields>
+      <pins>
+        <pin num="P$1" name="A" type="passive"/>
+        <pin num="P$2" name="C" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="PKMCS">
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">PKMCS</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P$1" type="unspc"/>
+        <pin num="2" name="P$2" type="unspc"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="PPTC_HALF-AMP">
+      <fields>
+        <field name="Reference">F</field>
+        <field name="Value">PPTC_HALF-AMP</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspc"/>
+        <pin num="2" name="2" type="unspc"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="RESISTOR-0402">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">RESISTOR-0402</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="SARA-N3">
+      <footprints>
+        <fp>SARA-N2</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">IC</field>
+        <field name="Value">SARA-N3</field>
+      </fields>
+      <pins>
+        <pin num="1" name="GND" type="unspc"/>
+        <pin num="3" name="GND" type="unspc"/>
+        <pin num="4" name="V_INT" type="unspc"/>
+        <pin num="5" name="GND" type="unspc"/>
+        <pin num="7" name="RI_(ringIND)" type="unspc"/>
+        <pin num="10" name="RTS" type="unspc"/>
+        <pin num="11" name="CTS" type="unspc"/>
+        <pin num="12" name="TXD" type="unspc"/>
+        <pin num="13" name="RXD" type="unspc"/>
+        <pin num="14" name="GND" type="unspc"/>
+        <pin num="15" name="PWR_ON" type="unspc"/>
+        <pin num="16" name="GPIO1" type="unspc"/>
+        <pin num="18" name="RESET_N" type="unspc"/>
+        <pin num="20" name="GND" type="unspc"/>
+        <pin num="21" name="V_SEL" type="unspc"/>
+        <pin num="22" name="GND" type="unspc"/>
+        <pin num="24" name="GPIO2" type="unspc"/>
+        <pin num="26" name="SDA" type="unspc"/>
+        <pin num="27" name="SCL" type="unspc"/>
+        <pin num="28" name="RXD_FT" type="unspc"/>
+        <pin num="29" name="TXD_FT" type="unspc"/>
+        <pin num="30" name="GND" type="unspc"/>
+        <pin num="32" name="GND" type="unspc"/>
+        <pin num="38" name="SIM_CLK" type="unspc"/>
+        <pin num="39" name="SIM_IO" type="unspc"/>
+        <pin num="40" name="SIM_RST" type="unspc"/>
+        <pin num="41" name="VSIM" type="unspc"/>
+        <pin num="43" name="GND" type="unspc"/>
+        <pin num="50" name="GND" type="unspc"/>
+        <pin num="51" name="VCC" type="unspc"/>
+        <pin num="52" name="VCC" type="unspc"/>
+        <pin num="53" name="VCC" type="unspc"/>
+        <pin num="54" name="GND" type="unspc"/>
+        <pin num="55" name="GND" type="unspc"/>
+        <pin num="56" name="ANT" type="unspc"/>
+        <pin num="57" name="GND" type="unspc"/>
+        <pin num="58" name="GND" type="unspc"/>
+        <pin num="59" name="ANT_BT" type="unspc"/>
+        <pin num="60" name="GND" type="unspc"/>
+        <pin num="61" name="GND" type="unspc"/>
+        <pin num="62" name="ANT_DET" type="unspc"/>
+        <pin num="63" name="GND" type="unspc"/>
+        <pin num="64" name="GND" type="unspc"/>
+        <pin num="65" name="GND" type="unspc"/>
+        <pin num="66" name="GND" type="unspc"/>
+        <pin num="67" name="GND" type="unspc"/>
+        <pin num="68" name="GND" type="unspc"/>
+        <pin num="69" name="GND" type="unspc"/>
+        <pin num="70" name="GND" type="unspc"/>
+        <pin num="71" name="GND" type="unspc"/>
+        <pin num="72" name="GND" type="unspc"/>
+        <pin num="73" name="GND" type="unspc"/>
+        <pin num="74" name="GND" type="unspc"/>
+        <pin num="75" name="GND" type="unspc"/>
+        <pin num="76" name="GND" type="unspc"/>
+        <pin num="77" name="GND" type="unspc"/>
+        <pin num="78" name="GND" type="unspc"/>
+        <pin num="79" name="GND" type="unspc"/>
+        <pin num="80" name="GND" type="unspc"/>
+        <pin num="81" name="GND" type="unspc"/>
+        <pin num="82" name="GND" type="unspc"/>
+        <pin num="83" name="GND" type="unspc"/>
+        <pin num="84" name="GND" type="unspc"/>
+        <pin num="85" name="GND" type="unspc"/>
+        <pin num="86" name="GND" type="unspc"/>
+        <pin num="87" name="GND" type="unspc"/>
+        <pin num="88" name="GND" type="unspc"/>
+        <pin num="89" name="GND" type="unspc"/>
+        <pin num="90" name="GND" type="unspc"/>
+        <pin num="91" name="GND" type="unspc"/>
+        <pin num="92" name="GND" type="unspc"/>
+        <pin num="93" name="GND" type="unspc"/>
+        <pin num="94" name="GND" type="unspc"/>
+        <pin num="95" name="GND" type="unspc"/>
+        <pin num="96" name="GND" type="unspc"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="SM-1206">
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">SM-1206</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="SN74AVC4T774PWG4">
+      <footprints>
+        <fp>PW16</fp>
+        <fp>PW16-M</fp>
+        <fp>PW16-L</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">SN74AVC4T774PWG4</field>
+        <field name="Footprint">PW16</field>
+      </fields>
+      <pins>
+        <pin num="1" name="DIR1" type="input"/>
+        <pin num="2" name="DIR2" type="input"/>
+        <pin num="3" name="A1" type="BiDi"/>
+        <pin num="4" name="A2" type="BiDi"/>
+        <pin num="5" name="A3" type="BiDi"/>
+        <pin num="6" name="A4" type="BiDi"/>
+        <pin num="7" name="DIR3" type="input"/>
+        <pin num="8" name="DIR4" type="input"/>
+        <pin num="9" name="*OE" type="input"/>
+        <pin num="10" name="GND" type="power_in"/>
+        <pin num="11" name="B4" type="BiDi"/>
+        <pin num="12" name="B3" type="BiDi"/>
+        <pin num="13" name="B2" type="BiDi"/>
+        <pin num="14" name="B1" type="BiDi"/>
+        <pin num="15" name="VCCB" type="power_in"/>
+        <pin num="16" name="VCCA" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="TPS22919">
+      <fields>
+        <field name="Reference">IC</field>
+        <field name="Value">TPS22919</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Vin" type="power_in"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="ON" type="input"/>
+        <pin num="4" name="Vout" type="power_out"/>
+        <pin num="5" name="QOD" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="TPTP08R">
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">TPTP08R</field>
+      </fields>
+      <pins>
+        <pin num="TP" name="TP" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="U.FL">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">U.FL</field>
+      </fields>
+      <pins>
+        <pin num="P$1" name="GND@0" type="unspc"/>
+        <pin num="P$2" name="GND@1" type="unspc"/>
+        <pin num="P$3" name="SIGNAL" type="unspc"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="USB_MICRO_SHIELD">
+      <fields>
+        <field name="Reference">X</field>
+        <field name="Value">USB_MICRO_SHIELD</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VCC" type="unspc"/>
+        <pin num="2" name="D-" type="unspc"/>
+        <pin num="3" name="D+" type="unspc"/>
+        <pin num="4" name="ID" type="unspc"/>
+        <pin num="5" name="GND" type="unspc"/>
+        <pin num="S1" name="SHIELD" type="unspc"/>
+        <pin num="S2" name="SHIELD" type="unspc"/>
+        <pin num="S3" name="SHIELD" type="unspc"/>
+        <pin num="S4" name="SHIELD" type="unspc"/>
+        <pin num="S5" name="SHIELD" type="unspc"/>
+        <pin num="S6" name="SHIELD" type="unspc"/>
+      </pins>
+    </libpart>
+    <libpart lib="easyhive" part="XC6220">
+      <fields>
+        <field name="Reference">IC</field>
+        <field name="Value">XC6220</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VIN" type="unspc"/>
+        <pin num="2" name="VSS" type="unspc"/>
+        <pin num="3" name="CE" type="unspc"/>
+        <pin num="5" name="VOUT" type="unspc"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="easyhive">
+      <uri>/home/easy/Documents/GitHub/easyhive_arduino/V1.5/Hardware/easyhive.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="Net-(C14-Pad2)">
+      <node ref="IC3" pin="10"/>
+      <node ref="C14" pin="2"/>
+    </net>
+    <net code="2" name="Net-(C14-Pad1)">
+      <node ref="C14" pin="1"/>
+      <node ref="IC3" pin="9"/>
+    </net>
+    <net code="3" name="VCC">
+      <node ref="F1" pin="2"/>
+      <node ref="IC5" pin="3"/>
+      <node ref="IC5" pin="1"/>
+      <node ref="C16" pin="1"/>
+    </net>
+    <net code="4" name="Net-(IC2-Pad16)">
+      <node ref="R5" pin="2"/>
+      <node ref="IC2" pin="16"/>
+    </net>
+    <net code="5" name="Net-(IC2-Pad12)">
+      <node ref="IC2" pin="12"/>
+      <node ref="R4" pin="2"/>
+    </net>
+    <net code="6" name="Net-(IC2-Pad14)">
+      <node ref="R3" pin="2"/>
+      <node ref="IC2" pin="14"/>
+    </net>
+    <net code="7" name="Net-(C20-Pad1)">
+      <node ref="C20" pin="1"/>
+      <node ref="K1" pin="C2"/>
+      <node ref="D4" pin="P$1"/>
+      <node ref="IC6" pin="40"/>
+    </net>
+    <net code="8" name="Net-(IC2-Pad1)">
+      <node ref="JP2" pin="1"/>
+      <node ref="IC2" pin="1"/>
+      <node ref="R15" pin="2"/>
+    </net>
+    <net code="9" name="Net-(C11-Pad1)">
+      <node ref="D1" pin="C"/>
+      <node ref="D2" pin="C"/>
+      <node ref="C11" pin="1"/>
+      <node ref="IC2" pin="13"/>
+    </net>
+    <net code="10" name="Net-(C7-Pad1)">
+      <node ref="L1" pin="1"/>
+      <node ref="C9" pin="1"/>
+      <node ref="IC1" pin="6"/>
+      <node ref="C7" pin="1"/>
+    </net>
+    <net code="11" name="Net-(D1-PadA)">
+      <node ref="D1" pin="A"/>
+      <node ref="JP1" pin="2"/>
+    </net>
+    <net code="12" name="/BUZZER">
+      <node ref="P1" pin="1"/>
+      <node ref="IC1" pin="41"/>
+    </net>
+    <net code="13" name="Net-(C13-Pad1)">
+      <node ref="IC2" pin="5"/>
+      <node ref="F1" pin="1"/>
+      <node ref="IC2" pin="10"/>
+      <node ref="C13" pin="1"/>
+      <node ref="IC2" pin="11"/>
+    </net>
+    <net code="14" name="GND">
+      <node ref="X1" pin="S3"/>
+      <node ref="C18" pin="2"/>
+      <node ref="C12" pin="2"/>
+      <node ref="C13" pin="2"/>
+      <node ref="X1" pin="5"/>
+      <node ref="X1" pin="S1"/>
+      <node ref="IC1" pin="5"/>
+      <node ref="K1" pin="Z1"/>
+      <node ref="X1" pin="S2"/>
+      <node ref="R4" pin="1"/>
+      <node ref="JP1" pin="1"/>
+      <node ref="C11" pin="2"/>
+      <node ref="C19" pin="2"/>
+      <node ref="IC2" pin="15"/>
+      <node ref="C20" pin="2"/>
+      <node ref="C2" pin="2"/>
+      <node ref="JP2" pin="2"/>
+      <node ref="C3" pin="2"/>
+      <node ref="C4" pin="2"/>
+      <node ref="R5" pin="1"/>
+      <node ref="C1" pin="2"/>
+      <node ref="IC3" pin="15"/>
+      <node ref="IC2" pin="4"/>
+      <node ref="IC2" pin="6"/>
+      <node ref="R3" pin="1"/>
+      <node ref="IC2" pin="8"/>
+      <node ref="K1" pin="Z6"/>
+      <node ref="K1" pin="Z5"/>
+      <node ref="X1" pin="S6"/>
+      <node ref="K1" pin="Z4"/>
+      <node ref="K1" pin="Z3"/>
+      <node ref="X1" pin="S5"/>
+      <node ref="K1" pin="Z2"/>
+      <node ref="IC2" pin="18"/>
+      <node ref="X1" pin="S4"/>
+      <node ref="J2" pin="P$2"/>
+      <node ref="U1" pin="10"/>
+      <node ref="IC6" pin="20"/>
+      <node ref="IC6" pin="14"/>
+      <node ref="IC6" pin="1"/>
+      <node ref="IC6" pin="22"/>
+      <node ref="J2" pin="P$1"/>
+      <node ref="IC6" pin="54"/>
+      <node ref="IC6" pin="50"/>
+      <node ref="IC6" pin="5"/>
+      <node ref="IC6" pin="43"/>
+      <node ref="IC6" pin="32"/>
+      <node ref="IC6" pin="30"/>
+      <node ref="IC6" pin="3"/>
+      <node ref="IC4" pin="4"/>
+      <node ref="JP3" pin="6"/>
+      <node ref="JP3" pin="2"/>
+      <node ref="JP3" pin="1"/>
+      <node ref="JP3" pin="7"/>
+      <node ref="IC6" pin="55"/>
+      <node ref="C29" pin="2"/>
+      <node ref="C30" pin="2"/>
+      <node ref="C7" pin="2"/>
+      <node ref="C6" pin="2"/>
+      <node ref="C5" pin="2"/>
+      <node ref="IC5" pin="2"/>
+      <node ref="C9" pin="2"/>
+      <node ref="IC3" pin="2"/>
+      <node ref="IC1" pin="42"/>
+      <node ref="IC3" pin="21"/>
+      <node ref="IC3" pin="3"/>
+      <node ref="IC3" pin="5"/>
+      <node ref="IC3" pin="6"/>
+      <node ref="IC1" pin="35"/>
+      <node ref="C32" pin="1"/>
+      <node ref="C31" pin="1"/>
+      <node ref="R24" pin="1"/>
+      <node ref="R22" pin="1"/>
+      <node ref="C8" pin="2"/>
+      <node ref="JP6" pin="1"/>
+      <node ref="C27" pin="2"/>
+      <node ref="D14" pin="P$1"/>
+      <node ref="D13" pin="P$1"/>
+      <node ref="D12" pin="P$1"/>
+      <node ref="D11" pin="P$1"/>
+      <node ref="JP5" pin="1"/>
+      <node ref="H4" pin="B2,8"/>
+      <node ref="TP12" pin="TP"/>
+      <node ref="R15" pin="1"/>
+      <node ref="IC3" pin="17"/>
+      <node ref="JP8" pin="1"/>
+      <node ref="H3" pin="B2,8"/>
+      <node ref="C28" pin="2"/>
+      <node ref="R17" pin="1"/>
+      <node ref="IC7" pin="2"/>
+      <node ref="JP7" pin="1"/>
+      <node ref="H2" pin="B2,8"/>
+      <node ref="H1" pin="B2,8"/>
+      <node ref="P1" pin="2"/>
+      <node ref="C21" pin="2"/>
+      <node ref="K1" pin="C5"/>
+      <node ref="IC1" pin="18"/>
+      <node ref="C16" pin="2"/>
+      <node ref="C17" pin="2"/>
+      <node ref="C26" pin="2"/>
+      <node ref="C25" pin="2"/>
+      <node ref="IC6" pin="21"/>
+      <node ref="IC6" pin="96"/>
+      <node ref="C24" pin="2"/>
+      <node ref="C15" pin="2"/>
+      <node ref="C23" pin="2"/>
+      <node ref="IC6" pin="61"/>
+      <node ref="IC6" pin="70"/>
+      <node ref="IC6" pin="69"/>
+      <node ref="IC6" pin="68"/>
+      <node ref="IC6" pin="67"/>
+      <node ref="IC6" pin="76"/>
+      <node ref="IC6" pin="65"/>
+      <node ref="IC6" pin="64"/>
+      <node ref="IC6" pin="63"/>
+      <node ref="IC6" pin="71"/>
+      <node ref="IC6" pin="60"/>
+      <node ref="IC6" pin="58"/>
+      <node ref="IC6" pin="57"/>
+      <node ref="IC6" pin="85"/>
+      <node ref="IC6" pin="94"/>
+      <node ref="IC6" pin="93"/>
+      <node ref="IC6" pin="92"/>
+      <node ref="IC6" pin="91"/>
+      <node ref="IC6" pin="90"/>
+      <node ref="IC6" pin="95"/>
+      <node ref="IC6" pin="66"/>
+      <node ref="IC6" pin="75"/>
+      <node ref="IC6" pin="74"/>
+      <node ref="IC6" pin="73"/>
+      <node ref="IC6" pin="72"/>
+      <node ref="D7" pin="P$2"/>
+      <node ref="C22" pin="2"/>
+      <node ref="D5" pin="P$2"/>
+      <node ref="D4" pin="P$2"/>
+      <node ref="D6" pin="P$2"/>
+      <node ref="D8" pin="P$1"/>
+      <node ref="D9" pin="P$1"/>
+      <node ref="D10" pin="P$1"/>
+      <node ref="J1" pin="P$1"/>
+      <node ref="IC6" pin="86"/>
+      <node ref="Q2" pin="2"/>
+      <node ref="IC6" pin="84"/>
+      <node ref="IC6" pin="83"/>
+      <node ref="IC6" pin="82"/>
+      <node ref="IC6" pin="81"/>
+      <node ref="J1" pin="P$2"/>
+      <node ref="IC6" pin="77"/>
+      <node ref="IC6" pin="80"/>
+      <node ref="IC6" pin="78"/>
+      <node ref="IC6" pin="79"/>
+      <node ref="Q3" pin="2"/>
+      <node ref="IC6" pin="89"/>
+      <node ref="IC6" pin="88"/>
+      <node ref="IC6" pin="87"/>
+    </net>
+    <net code="15" name="+3V3">
+      <node ref="IC4" pin="8"/>
+      <node ref="IC3" pin="1"/>
+      <node ref="JP6" pin="4"/>
+      <node ref="C24" pin="1"/>
+      <node ref="C26" pin="1"/>
+      <node ref="C25" pin="1"/>
+      <node ref="C30" pin="1"/>
+      <node ref="C27" pin="1"/>
+      <node ref="IC5" pin="5"/>
+      <node ref="JP8" pin="3"/>
+      <node ref="R25" pin="2"/>
+      <node ref="C8" pin="1"/>
+      <node ref="C1" pin="1"/>
+      <node ref="R21" pin="1"/>
+      <node ref="C6" pin="1"/>
+      <node ref="C5" pin="1"/>
+      <node ref="U1" pin="16"/>
+      <node ref="C31" pin="2"/>
+      <node ref="R18" pin="2"/>
+      <node ref="IC6" pin="51"/>
+      <node ref="IC6" pin="52"/>
+      <node ref="IC7" pin="1"/>
+      <node ref="IC6" pin="53"/>
+      <node ref="TP10" pin="TP"/>
+      <node ref="R13" pin="2"/>
+      <node ref="R14" pin="2"/>
+      <node ref="R23" pin="1"/>
+      <node ref="JP5" pin="5"/>
+      <node ref="D14" pin="P$2"/>
+      <node ref="C17" pin="1"/>
+      <node ref="IC1" pin="44"/>
+      <node ref="IC3" pin="20"/>
+      <node ref="IC3" pin="19"/>
+      <node ref="IC1" pin="36"/>
+      <node ref="L1" pin="2"/>
+      <node ref="IC1" pin="17"/>
+      <node ref="C29" pin="1"/>
+      <node ref="JP7" pin="5"/>
+      <node ref="C10" pin="1"/>
+      <node ref="R2" pin="2"/>
+    </net>
+    <net code="16" name="/3V3_LC">
+      <node ref="JP3" pin="10"/>
+      <node ref="C15" pin="1"/>
+      <node ref="IC7" pin="4"/>
+      <node ref="JP3" pin="5"/>
+      <node ref="IC3" pin="18"/>
+      <node ref="IC3" pin="16"/>
+    </net>
+    <net code="17" name="Net-(D10-PadP$2)">
+      <node ref="D10" pin="P$2"/>
+      <node ref="L2" pin="1"/>
+      <node ref="X1" pin="1"/>
+    </net>
+    <net code="18" name="Net-(C21-Pad1)">
+      <node ref="IC6" pin="41"/>
+      <node ref="K1" pin="C1"/>
+      <node ref="D5" pin="P$1"/>
+      <node ref="C22" pin="1"/>
+      <node ref="C21" pin="1"/>
+    </net>
+    <net code="19" name="Net-(C18-Pad1)">
+      <node ref="D7" pin="P$1"/>
+      <node ref="K1" pin="C7"/>
+      <node ref="IC6" pin="39"/>
+      <node ref="C18" pin="1"/>
+    </net>
+    <net code="20" name="Net-(C19-Pad1)">
+      <node ref="D6" pin="P$1"/>
+      <node ref="K1" pin="C3"/>
+      <node ref="C19" pin="1"/>
+      <node ref="IC6" pin="38"/>
+    </net>
+    <net code="21" name="Net-(IC6-Pad11)">
+      <node ref="IC6" pin="11"/>
+      <node ref="R12" pin="1"/>
+    </net>
+    <net code="22" name="Net-(IC6-Pad10)">
+      <node ref="IC6" pin="10"/>
+      <node ref="R11" pin="1"/>
+    </net>
+    <net code="23" name="/USBN">
+      <node ref="D9" pin="P$2"/>
+      <node ref="IC1" pin="33"/>
+      <node ref="X1" pin="2"/>
+    </net>
+    <net code="24" name="/USBP">
+      <node ref="D8" pin="P$2"/>
+      <node ref="IC1" pin="34"/>
+      <node ref="X1" pin="3"/>
+    </net>
+    <net code="25" name="Net-(C4-Pad1)">
+      <node ref="Q1" pin="2"/>
+      <node ref="IC1" pin="2"/>
+      <node ref="C4" pin="1"/>
+    </net>
+    <net code="26" name="Net-(C3-Pad1)">
+      <node ref="C3" pin="1"/>
+      <node ref="Q1" pin="1"/>
+      <node ref="IC1" pin="1"/>
+    </net>
+    <net code="27" name="Net-(C2-Pad1)">
+      <node ref="IC1" pin="43"/>
+      <node ref="C2" pin="1"/>
+    </net>
+    <net code="28" name="Net-(R1-Pad1)">
+      <node ref="TP16" pin="TP"/>
+      <node ref="R1" pin="1"/>
+    </net>
+    <net code="29" name="Net-(IC6-Pad7)">
+      <node ref="IC6" pin="7"/>
+      <node ref="TP19" pin="TP"/>
+    </net>
+    <net code="30" name="/GREEN">
+      <node ref="IC1" pin="27"/>
+    </net>
+    <net code="31" name="Net-(IC6-Pad29)">
+      <node ref="JP4" pin="1"/>
+      <node ref="IC6" pin="29"/>
+    </net>
+    <net code="32" name="Net-(IC6-Pad28)">
+      <node ref="IC6" pin="28"/>
+      <node ref="JP4" pin="2"/>
+    </net>
+    <net code="33" name="/ANT">
+      <node ref="J1" pin="P$3"/>
+      <node ref="IC6" pin="56"/>
+    </net>
+    <net code="34" name="Net-(IC6-Pad15)">
+      <node ref="Q2" pin="3"/>
+      <node ref="IC6" pin="15"/>
+    </net>
+    <net code="35" name="/SARA_PWRON">
+      <node ref="Q2" pin="1"/>
+      <node ref="IC1" pin="19"/>
+    </net>
+    <net code="36" name="/SARA_RST">
+      <node ref="Q3" pin="1"/>
+      <node ref="IC1" pin="20"/>
+    </net>
+    <net code="37" name="Net-(IC6-Pad16)">
+      <node ref="IC6" pin="16"/>
+      <node ref="TP2" pin="TP"/>
+    </net>
+    <net code="39" name="Net-(IC6-Pad18)">
+      <node ref="Q3" pin="3"/>
+      <node ref="IC6" pin="18"/>
+    </net>
+    <net code="40" name="Net-(IC3-Pad14)">
+      <node ref="IC3" pin="14"/>
+      <node ref="JP3" pin="4"/>
+    </net>
+    <net code="41" name="Net-(IC3-Pad13)">
+      <node ref="IC3" pin="13"/>
+      <node ref="JP3" pin="3"/>
+    </net>
+    <net code="42" name="Net-(IC3-Pad12)">
+      <node ref="JP3" pin="8"/>
+      <node ref="IC3" pin="12"/>
+    </net>
+    <net code="43" name="Net-(IC3-Pad11)">
+      <node ref="IC3" pin="11"/>
+      <node ref="JP3" pin="9"/>
+    </net>
+    <net code="44" name="Net-(R24-Pad2)">
+      <node ref="R24" pin="2"/>
+      <node ref="U1" pin="8"/>
+    </net>
+    <net code="45" name="Net-(R23-Pad2)">
+      <node ref="U1" pin="7"/>
+      <node ref="R23" pin="2"/>
+    </net>
+    <net code="46" name="Net-(R22-Pad2)">
+      <node ref="R22" pin="2"/>
+      <node ref="U1" pin="2"/>
+    </net>
+    <net code="47" name="Net-(R21-Pad2)">
+      <node ref="U1" pin="1"/>
+      <node ref="R21" pin="2"/>
+    </net>
+    <net code="48" name="/CTS1V8">
+      <node ref="R12" pin="2"/>
+      <node ref="U1" pin="13"/>
+    </net>
+    <net code="49" name="/RTS1V8">
+      <node ref="U1" pin="14"/>
+      <node ref="R11" pin="2"/>
+    </net>
+    <net code="50" name="/SARA_RX_3V3">
+      <node ref="U1" pin="6"/>
+      <node ref="IC1" pin="21"/>
+    </net>
+    <net code="51" name="/SARA_TX_3V3">
+      <node ref="IC1" pin="22"/>
+      <node ref="U1" pin="5"/>
+    </net>
+    <net code="52" name="/SARA_CTS_3V3">
+      <node ref="U1" pin="4"/>
+      <node ref="IC1" pin="23"/>
+    </net>
+    <net code="53" name="/SARA_RTS_3V3">
+      <node ref="U1" pin="3"/>
+      <node ref="IC1" pin="24"/>
+    </net>
+    <net code="54" name="/SARA_TX_1V8">
+      <node ref="IC6" pin="12"/>
+      <node ref="U1" pin="12"/>
+    </net>
+    <net code="55" name="/SARA_SCL">
+      <node ref="IC6" pin="27"/>
+    </net>
+    <net code="56" name="/+1V8">
+      <node ref="C32" pin="2"/>
+      <node ref="U1" pin="15"/>
+      <node ref="IC6" pin="4"/>
+      <node ref="TP1" pin="TP"/>
+    </net>
+    <net code="57" name="/ANT_BT">
+      <node ref="IC6" pin="59"/>
+      <node ref="J2" pin="P$3"/>
+    </net>
+    <net code="58" name="/I2S_WS">
+      <node ref="JP7" pin="2"/>
+      <node ref="IC1" pin="16"/>
+    </net>
+    <net code="59" name="/LC_ON">
+      <node ref="IC7" pin="3"/>
+      <node ref="IC1" pin="29"/>
+    </net>
+    <net code="60" name="/SARA_SDA">
+      <node ref="IC6" pin="26"/>
+    </net>
+    <net code="61" name="/SARA_RX_1V8">
+      <node ref="IC6" pin="13"/>
+      <node ref="U1" pin="11"/>
+    </net>
+    <net code="62" name="/SARA_1V8_ENABLE">
+      <node ref="IC1" pin="25"/>
+      <node ref="R25" pin="1"/>
+      <node ref="U1" pin="9"/>
+    </net>
+    <net code="63" name="/RED">
+      <node ref="IC1" pin="26"/>
+    </net>
+    <net code="64" name="Net-(IC1-Pad4)">
+      <node ref="IC1" pin="4"/>
+    </net>
+    <net code="65" name="Net-(IC1-Pad38)">
+      <node ref="IC1" pin="38"/>
+    </net>
+    <net code="66" name="Net-(IC1-Pad37)">
+      <node ref="IC1" pin="37"/>
+    </net>
+    <net code="67" name="Net-(IC1-Pad8)">
+      <node ref="IC1" pin="8"/>
+    </net>
+    <net code="68" name="Net-(IC2-Pad17)">
+      <node ref="IC2" pin="17"/>
+      <node ref="IC2" pin="18"/>
+      <node ref="IC2" pin="V1"/>
+      <node ref="IC2" pin="V4"/>
+      <node ref="IC2" pin="V3"/>
+      <node ref="IC2" pin="V2"/>
+    </net>
+    <net code="69" name="Net-(IC2-Pad17)">
+      <node ref="IC2" pin="17"/>
+    </net>
+    <net code="70" name="Net-(IC2-Pad9)">
+      <node ref="IC2" pin="9"/>
+    </net>
+    <net code="71" name="Net-(IC2-Pad7)">
+      <node ref="IC2" pin="7"/>
+    </net>
+    <net code="72" name="Net-(X1-Pad4)">
+      <node ref="X1" pin="4"/>
+    </net>
+    <net code="73" name="/~RESET">
+      <node ref="R2" pin="1"/>
+      <node ref="R1" pin="2"/>
+      <node ref="C10" pin="2"/>
+      <node ref="D11" pin="P$2"/>
+      <node ref="JP5" pin="2"/>
+      <node ref="IC1" pin="40"/>
+    </net>
+    <net code="74" name="/SWDIO">
+      <node ref="JP5" pin="4"/>
+      <node ref="IC1" pin="46"/>
+      <node ref="D13" pin="P$2"/>
+    </net>
+    <net code="75" name="/SWCLK">
+      <node ref="D12" pin="P$2"/>
+      <node ref="JP5" pin="3"/>
+      <node ref="IC1" pin="45"/>
+    </net>
+    <net code="76" name="/ADS_A0">
+      <node ref="IC3" pin="8"/>
+      <node ref="IC1" pin="28"/>
+    </net>
+    <net code="77" name="/PB03">
+      <node ref="TP9" pin="TP"/>
+      <node ref="IC1" pin="48"/>
+    </net>
+    <net code="78" name="/PB02">
+      <node ref="IC1" pin="47"/>
+      <node ref="TP13" pin="TP"/>
+    </net>
+    <net code="79" name="/PDWN">
+      <node ref="IC1" pin="12"/>
+      <node ref="IC3" pin="22"/>
+    </net>
+    <net code="80" name="/PB08">
+      <node ref="TP6" pin="TP"/>
+      <node ref="IC1" pin="7"/>
+    </net>
+    <net code="81" name="/BLUE">
+      <node ref="IC1" pin="30"/>
+    </net>
+    <net code="82" name="/AIN0">
+      <node ref="R17" pin="2"/>
+      <node ref="IC1" pin="3"/>
+      <node ref="R16" pin="1"/>
+      <node ref="C28" pin="1"/>
+    </net>
+    <net code="83" name="/SCLK">
+      <node ref="IC1" pin="11"/>
+      <node ref="IC3" pin="23"/>
+    </net>
+    <net code="84" name="/DATA">
+      <node ref="IC3" pin="24"/>
+      <node ref="IC1" pin="10"/>
+    </net>
+    <net code="85" name="/I2S_SD">
+      <node ref="JP7" pin="3"/>
+      <node ref="IC1" pin="13"/>
+    </net>
+    <net code="86" name="/TEMP_EN">
+      <node ref="IC3" pin="7"/>
+      <node ref="IC1" pin="9"/>
+    </net>
+    <net code="87" name="/DS_DATA">
+      <node ref="IC1" pin="39"/>
+      <node ref="JP8" pin="2"/>
+      <node ref="IC4" pin="1"/>
+      <node ref="TP11" pin="TP"/>
+      <node ref="R18" pin="1"/>
+    </net>
+    <net code="88" name="/I2S_SCK">
+      <node ref="IC1" pin="15"/>
+      <node ref="JP7" pin="4"/>
+    </net>
+    <net code="89" name="/I2S_MCK">
+      <node ref="IC1" pin="14"/>
+    </net>
+    <net code="90" name="/VBAT">
+      <node ref="IC2" pin="3"/>
+      <node ref="IC2" pin="2"/>
+      <node ref="R16" pin="2"/>
+      <node ref="JP2" pin="3"/>
+      <node ref="C12" pin="1"/>
+    </net>
+    <net code="91" name="/SAM_SCL">
+      <node ref="JP6" pin="2"/>
+      <node ref="IC1" pin="32"/>
+      <node ref="R14" pin="1"/>
+    </net>
+    <net code="92" name="/SAM_SDA">
+      <node ref="R13" pin="1"/>
+      <node ref="JP6" pin="3"/>
+      <node ref="IC1" pin="31"/>
+    </net>
+    <net code="93" name="/SARA_IO2">
+      <node ref="TP3" pin="TP"/>
+      <node ref="IC6" pin="24"/>
+    </net>
+    <net code="94" name="/ANT_DET">
+      <node ref="IC6" pin="62"/>
+    </net>
+    <net code="95" name="/VUSB">
+      <node ref="C23" pin="1"/>
+      <node ref="D2" pin="A"/>
+      <node ref="L2" pin="2"/>
+    </net>
+    <net code="96" name="Net-(IC7-Pad5)">
+      <node ref="IC7" pin="5"/>
+    </net>
+    <net code="97" name="Net-(K1-PadC6)">
+      <node ref="K1" pin="C6"/>
+    </net>
+    <net code="98" name="Net-(IC3-Pad4)">
+      <node ref="IC3" pin="4"/>
+    </net>
+  </nets>
+</export>

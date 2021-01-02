@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name easyhive)(type KiCad)(uri ${KIPRJMOD}/easyhive.pretty)(options "")(descr ""))
+)

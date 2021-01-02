@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name easyhive)(type Legacy)(uri ${KIPRJMOD}/easyhive.lib)(options "")(descr ""))
+)
