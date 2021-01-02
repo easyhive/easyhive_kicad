@@ -16,7 +16,6 @@
 #include "base64.h"
 #include "stdio.h"
 #include "RTCZero.h"
-#include "MemoryFree.h"
 
 // songs for the buzzer system
 // d=16,o=5,b=250:3a7,4p,3a7,4p,3a7,4p,3b7,4p,3b7,4p
