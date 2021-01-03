@@ -31,8 +31,8 @@ uint8_t BER;
 
 
 // only for debugging reasons:
-int shutdown_counter = 0;
 unsigned long starttime;
+
 /*
    The setup function. We only start the sensors here and initialize the board state
 */
@@ -43,7 +43,6 @@ unsigned long starttime;
 
 void setup(void)
 {
-  shutdown_counter ++;
   starttime = millis();
   
   loopcounter = 0;
@@ -251,11 +250,12 @@ void loop(void){
         //String msg = String(weight1) + "," + String(weight2) + "," + String(temp) + "," + String(volt) + "," + String(csq) + "," + String(BoardID) + "," + String(epoch) ;       
         
         // changed only for debugging reasons
-        // freemem: free memory
-        // shutdowncounter: did the scale restart?
+        // pointer_pos 
         // uptime = how long has the scale not been turned off?
+        // i = how ofter through the loop
+        // freemem: free memory
         unsigned long uptime = millis()-starttime;
-        String msg = String(shutdown_counter) + "," + String(uptime) + "," + String(temp) + "," + String(freemem) + "," + String(csq) + "," + String(BoardID) + "," + String(epoch) ;
+        String msg = String(pointer_pos) + "," + String(uptime) + "," + String(i) + "," + String(freemem) + "," + String(csq) + "," + String(BoardID) + "," + String(epoch) ;
 
         SerialUSB.print("manipulated String msg: ");
         SerialUSB.println(msg);       
@@ -288,10 +288,14 @@ void loop(void){
       } // end of for loop
     } // end of else (nbiot is connected)
 
+    loopcounter = 0;
     // set the loopcounter to 0 only if all messages have been sent sucessfully.
-    if(loopreset){
-      loopcounter = 0;  
-    }
+    // if(loopreset){
+    //   loopcounter = 0;  
+    // }
+
+ 
+
   } // end of: if (loopcounter >= datasendtime / datalogtime)
 
   else {  // loopcounter < datasendtime/datalogtime
