@@ -87,7 +87,7 @@
       (mirror false)
       (drillshape 0)
       (scaleselection 1)
-      (outputdirectory "2020_12_13_Gerber/"))
+      (outputdirectory "2021_01_02_Gerber/"))
   )
 
   (net 0 "")
@@ -4528,7 +4528,7 @@
   (segment (start 147.1 118.8) (end 147.05 118.85) (width 0.25) (layer Top) (net 98))
   (segment (start 148.6 118.8) (end 147.1 118.8) (width 0.25) (layer Top) (net 98))
 
-  (zone (net 1) (net_name GND) (layer Top) (tstamp 0) (hatch edge 0.508)
+  (zone (net 1) (net_name GND) (layer Top) (tstamp 5FF15632) (hatch edge 0.508)
     (priority 1)
     (connect_pads (clearance 0.000001))
     (min_thickness 0.1524)
@@ -6812,7 +6812,7 @@
       )
     )
   )
-  (zone (net 1) (net_name GND) (layer Bottom) (tstamp 0) (hatch edge 0.508)
+  (zone (net 1) (net_name GND) (layer Bottom) (tstamp 5FF1562F) (hatch edge 0.508)
     (priority 1)
     (connect_pads (clearance 0.000001))
     (min_thickness 0.1524)
