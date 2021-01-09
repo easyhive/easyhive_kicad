@@ -917,7 +917,7 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
     }
 }
 
-bool sendMessageThroughUDP_noanswer()
+bool sendMessageThroughUDP_noanswer(const char param[STDSTRINGLEN])
 {
    // DEBUG_STREAM.println();
    // DEBUG_STREAM.println("Sending message through UDP");
@@ -933,15 +933,7 @@ bool sendMessageThroughUDP_noanswer()
     // DEBUG_STREAM.println("Created socket!");
 
     // const char* strBuffer = "1,50,49";
-    const char param[STDSTRINGLEN];
-    values;
-    for (i=0; i<100; i++){
-        char src[] = sensorbuffer.epochtime[i];
-
-    }
-
-
-    // encrypt data
+    const char *text = param;
     size_t len;
     const unsigned char *encrypt_data = (const unsigned char*)xxtea_encrypt(text, strlen(text), key, &len);
     char * base64_data = base64_encode(encrypt_data, len);
@@ -1068,7 +1060,6 @@ void read_sens_value(float* weight1, float* weight2, float* temp, float* volt, i
 	*epochtime = sensorbuffer.epochtime[position];
     return; 
 }
-
 
 
 int get_sens_pointer(int offset){
