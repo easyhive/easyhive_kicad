@@ -32,6 +32,8 @@ uint8_t BER;
 
 // only for debugging reasons:
 unsigned long starttime;
+extern int lengthSent;
+extern size_t size;
 
 /*
    The setup function. We only start the sensors here and initialize the board state
@@ -261,7 +263,7 @@ void loop(void){
         // i = how ofter through the loop
         // freemem: free memory
         unsigned long uptime = millis()-starttime;
-        String msg = String(pointer_pos) + "," + String(uptime) + "," + String(loopcounter) + "," + String(freemem) + "," + String(csq) + "," + String(BoardID) + "," + String(epoch) ;
+        String msg = String(pointer_pos) + "," + String(size) + "," + String(loopcounter) + "," + String(lengthSent) + "," + String(csq) + "," + String(BoardID) + "," + String(epoch) ;
 
         SerialUSB.print("manipulated String msg: ");
         SerialUSB.println(msg);       

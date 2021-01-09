@@ -633,6 +633,11 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
 
 	//*********** // UDP Response // ************ //
 	
+    if(lengthSent==0){
+         return 0;
+    }
+    else{
+
 	String msg = "";
     // wait for data
     if (nbiot.waitForUDPResponse()) {
@@ -914,6 +919,8 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
 	  } 
 	  
 	  return 0;
+    }
+
     }
 }
 
