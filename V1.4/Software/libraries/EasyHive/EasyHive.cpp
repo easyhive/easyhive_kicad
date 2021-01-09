@@ -16,6 +16,7 @@
 #include "base64.h"
 #include "stdio.h"
 #include "RTCZero.h"
+#include "MemoryFree.h"
 
 // songs for the buzzer system
 // d=16,o=5,b=250:3a7,4p,3a7,4p,3a7,4p,3b7,4p,3b7,4p
@@ -198,10 +199,12 @@ void init_BoardID(void){
     }
     else{
 			//SerialUSB.println("BoardID is not set yet - setting it to standard");     
-			BoardID = 1;
-			//BoardID = 80; //set this for fixedBoardID
-			//flash_boardid.write(BoardID); //set this for fixedBoardID
-			//flash_boardid_set.write(true); //set this for fixedBoardID
+			//BoardID = 1;
+			BoardID = 80;
+			flash_boardid.write(BoardID); //set this for fixedBoardID
+			flash_boardid_set.write(true); //set this for fixedBoardID
+			SerialUSB.print("in init_BoardID: ");
+			SerialUSB.println(BoardID);
     }
 }
 
@@ -633,7 +636,7 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
 	String msg = "";
     // wait for data
     if (nbiot.waitForUDPResponse()) {
-        // DEBUG_STREAM.println("Received response!");
+        DEBUG_STREAM.println("Received response!");
         while (nbiot.hasPendingUDPBytes()) {
             char data[10];   
             // read two bytes at a time
@@ -674,17 +677,17 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
 	DEBUG_STREAM.print("message UDP Response enrypted:");
 	DEBUG_STREAM.println(msg.c_str());
 	
-	encrypt_data = (const unsigned char*)base64_decode(msg.c_str(), &len);
+	const unsigned char *encrypt_data2 = (const unsigned char*)base64_decode(msg.c_str(), &len);
 	
 	//DEBUG_STREAM.println(encrypt_data);
 		
-	char * decrypt_data =  (char*)xxtea_decrypt(encrypt_data, len, key, &len);
+	char * decrypt_data =  (char*)xxtea_decrypt(encrypt_data2, len, key, &len);
 
 	DEBUG_STREAM.println("message decrypted:");
 	DEBUG_STREAM.println(decrypt_data);	
 	
 	// free memory from encryption buffer
-	free(const_cast<unsigned char*>(encrypt_data));
+	free(const_cast<unsigned char*>(encrypt_data2));
 		
 	DEBUG_STREAM.println(decrypt_data);
     msg = decrypt_data;

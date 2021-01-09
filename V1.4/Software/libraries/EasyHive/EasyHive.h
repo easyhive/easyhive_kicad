@@ -35,7 +35,7 @@
 // define udp msg length
 #define STDSTRINGLEN 30
 
-#define SENSOR_BUFFER_LEN 50
+#define SENSOR_BUFFER_LEN 100
 
 void init_RTC(void);
 void init_server_data(void);

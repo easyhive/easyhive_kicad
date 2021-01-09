@@ -111,6 +111,8 @@ void setup(void)
 
   if (!nbiot.connect(apn, cdp, forceOperator, 8)) {
     DEBUG_STREAM.println("Failed to connect to the modem!");
+
+    //Neustart Befehl für SARA-Modul?
   }
 
   // check Signal quality
@@ -159,7 +161,7 @@ void loop(void){
 
 
   digitalWrite(SELECT, LOW);
-  sodaq_wdt_safe_delay(150);
+  sodaq_wdt_safe_delay(300);
   get_Weight();//dummy weight measure for settlement
   sodaq_wdt_safe_delay(150);
   get_Weight();
@@ -174,7 +176,7 @@ void loop(void){
   //SerialUSB.println(weight_val_raw1, DEC);
 
   digitalWrite(SELECT, HIGH); // read the other side
-  sodaq_wdt_safe_delay(150);
+  sodaq_wdt_safe_delay(300);
   //dummy weight measure for settlement
   get_Weight2();
   sodaq_wdt_safe_delay(150);
@@ -225,7 +227,12 @@ void loop(void){
       }
     }
     else {
-      for (int i = 0; i > -loopcounter && i > -SENSOR_BUFFER_LEN; i--) {
+      //loopcounter init 0, every void loop +1
+      //FIFO - first in first out 
+      while (loopcounter > 0) {
+       if (loopcounter > SENSOR_BUFFER_LEN) {
+        loopcounter = SENSOR_BUFFER_LEN;
+       }
         // SENSOR_BUFFER_LEN is defined in easyhive.h (50)
         float weight1 = 0;
         float weight2 = 0;
@@ -234,16 +241,15 @@ void loop(void){
         int8_t csq = 0;
         long epoch = 0;
       
-        int pointer_pos = get_sens_pointer(i);
+        int pointer_pos = get_sens_pointer(-(loopcounter-1)); // bei loopcounter 1 = Offset 0
         read_sens_value(&weight1, &weight2, &temp, &volt, &csq, &epoch, pointer_pos);
 
-        SerialUSB.print("pointer_pos: ");
-        SerialUSB.println(pointer_pos);
 
         SerialUSB.print("loopcounter: ");
         SerialUSB.println(loopcounter);
-        SerialUSB.print("i from for: ");
-        SerialUSB.println(i);
+
+        SerialUSB.print("pointer_pos: ");
+        SerialUSB.println(pointer_pos);
 
         // SerialUSB.print("new String: ");
         // SerialUSB.println(result);
@@ -255,14 +261,12 @@ void loop(void){
         // i = how ofter through the loop
         // freemem: free memory
         unsigned long uptime = millis()-starttime;
-        String msg = String(pointer_pos) + "," + String(uptime) + "," + String(i) + "," + String(freemem) + "," + String(csq) + "," + String(BoardID) + "," + String(epoch) ;
+        String msg = String(pointer_pos) + "," + String(uptime) + "," + String(loopcounter) + "," + String(freemem) + "," + String(csq) + "," + String(BoardID) + "," + String(epoch) ;
 
         SerialUSB.print("manipulated String msg: ");
         SerialUSB.println(msg);       
         SerialUSB.print("uptime: ");
         SerialUSB.println(uptime);
-        SerialUSB.print("shutdown_counter: ");
-        SerialUSB.println(shutdown_counter);
 
         // SerialUSB.print("old String: ");
         // SerialUSB.println(msg);
@@ -275,27 +279,17 @@ void loop(void){
 
         // if sending data to the server was successfull -> success = 1
         if(success){
-         SerialUSB.println("Message was sent. Reset loopcounter.");
-         loopreset = true;  // bool to reset the loopcounter to 0 -> Data is not sent again. 
+         SerialUSB.println("Message was sent. loopcounter -1.");
+         loopcounter --; 
         }
         // else if sending data to the server was not possible -> success = 0
         else{
-         SerialUSB.println("Message could not be sent. Here we want to keep up the loopcounter.");
-         loopreset = false; // do not reset loopcounter -> try to send data again by going through the for loop once additionally (next time)
+         SerialUSB.println("Message could not be sent. Here we want to reboot SARA Modul and leave the loop without touching loopcounter");
+         nbiot.connect(apn, cdp, forceOperator, 8);
          break; // leave for loop. Sleep and try to send the data next time.
-        }
-          
-      } // end of for loop
+        }   
+      } // end of while loop
     } // end of else (nbiot is connected)
-
-    loopcounter = 0;
-    // set the loopcounter to 0 only if all messages have been sent sucessfully.
-    // if(loopreset){
-    //   loopcounter = 0;  
-    // }
-
- 
-
   } // end of: if (loopcounter >= datasendtime / datalogtime)
 
   else {  // loopcounter < datasendtime/datalogtime
