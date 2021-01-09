@@ -279,8 +279,15 @@ void loop(void){
 
         // if sending data to the server was successfull -> success = 1
         if(success){
-         SerialUSB.println("Message was sent. loopcounter -1.");
-         loopcounter --; 
+          sodaq_wdt_safe_delay(20);
+          SerialUSB.println("Message was sent. loopcounter -1.");
+          if(loopcounter>1){
+            pointer_pos = get_sens_pointer(-(loopcounter-3)); // bei loopcounter 1 = Offset -2
+            read_sens_value(&weight1, &weight2, &temp, &volt, &csq, &epoch, pointer_pos);
+            String msg = String(pointer_pos) + "," + String(uptime) + "," + String(loopcounter) + "," + String(freemem) + "," + String(csq) + "," + String(BoardID) + "," + String(epoch) ;
+            sendMessageThroughUDP(msg.c_str());
+          }
+          loopcounter --; 
         }
         // else if sending data to the server was not possible -> success = 0
         else{
