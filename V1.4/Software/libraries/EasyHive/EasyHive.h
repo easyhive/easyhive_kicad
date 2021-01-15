@@ -35,7 +35,7 @@
 // define udp msg length
 #define STDSTRINGLEN 30
 
-#define SENSOR_BUFFER_LEN 100
+#define SENSOR_BUFFER_LEN 30
 
 void init_RTC(void);
 void init_server_data(void);
@@ -72,7 +72,7 @@ int readNumber(String msg, uint8_t position);
 unsigned long readEpoch(String msg, uint8_t position);
 
 void read_sens_value(float* weight1, float* weight2, float* temp, float* volt, int8_t* signal, long* package, int position);
-void safe_sens_value(float weight1, float weight2, float temp, float volt, int8_t signal, long package);
+void save_sens_value(float weight1, float weight2, float temp, float volt, int8_t signal, long package);
 int get_sens_pointer(int offset);
 
 void pinStr( uint32_t ulPin, unsigned strength);

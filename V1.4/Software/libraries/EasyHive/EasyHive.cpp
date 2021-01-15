@@ -34,7 +34,11 @@ char *countdown3 = "8g#,f#,d6,2c#.6,16c#6,16d6,16c#6,16b,1c#6,2p";
 const char *key = "9Udj81*";
 
 // Set the BoardID
-int BoardID = 1;			
+int BoardID = 1;	
+
+//for DEBUG, extern variable visible in sktech.ino
+int lengthSent;	
+size_t sizeStrBuffer;	
 
 // Set intervals for data logging and data sending [seconds] // due to watchdogtimer they result in multiples of 8
 int datasendtime =  15;
@@ -604,7 +608,9 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
     const char *base64_data = base64_encode(encrypt_data, len);
     
     // free memory from encryption buffer
+    delay(50);
     free(const_cast<unsigned char*>(encrypt_data));
+    delay(20);
     
     //DEBUG_STREAM.print("Text with xxtea + base64_data: ");
     //DEBUG_STREAM.println(base64_data);
@@ -612,33 +618,32 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
     const char* strBuffer = base64_data;
     
     // free memory from encryption buffer
+    delay(50);
     free(const_cast<char*>(base64_data));
+    delay(20);
     
     // PRINT encrypted data (strBuffer)
     DEBUG_STREAM.println(strBuffer);
-    size_t size = strlen(strBuffer);
+    sizeStrBuffer = strlen(strBuffer);
     
     // send data
     // DEBUG_STREAM.print("sending to: ");
     // DEBUG_STREAM.println(server.ip);
-    int lengthSent = nbiot.socketSend(socketID, server.ip, server.port, strBuffer); // "195.34.89.241" : 7 is the ublox echo service
+    lengthSent = nbiot.socketSend(socketID, server.ip, server.port, strBuffer); // "195.34.89.241" : 7 is the ublox echo service
   
-	// free memory from stri buffer
+	// free memory from string buffer
+	delay(50);
     free(const_cast<char*>(strBuffer));
+    delay(20);
     
     DEBUG_STREAM.print("String length vs sent: ");
-    DEBUG_STREAM.print(size);
+    DEBUG_STREAM.print(sizeStrBuffer);
     DEBUG_STREAM.print(" vs ");
     DEBUG_STREAM.println(lengthSent);
 
 	//*********** // UDP Response // ************ //
-	
-    if(lengthSent==0){
-         return 0;
-    }
-    else{
 
-	String msg = "";
+	String msg = "";  // response string from N2
     // wait for data
     if (nbiot.waitForUDPResponse()) {
         DEBUG_STREAM.println("Received response!");
@@ -677,6 +682,11 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
     
    //*********** // check message from UDP Response // ************ //
     
+    //StrBuffer was empty. TODO: why???
+    //if(sizeStrBuffer==0){
+    //     return 0;
+    //}
+    
     DEBUG_STREAM.println("checking message...");    
 	DEBUG_STREAM.println(msg);
 	DEBUG_STREAM.print("message UDP Response enrypted:");
@@ -692,13 +702,17 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
 	DEBUG_STREAM.println(decrypt_data);	
 	
 	// free memory from encryption buffer
+	delay(50);
 	free(const_cast<unsigned char*>(encrypt_data2));
+	delay(20);
 		
 	DEBUG_STREAM.println(decrypt_data);
     msg = decrypt_data;
 	
 	// free memory from decryption buffer
+	delay(50);
 	free(decrypt_data);
+	delay(20);
     
     if(msg.length() > 0) // something was transmitted..
     {
@@ -921,7 +935,6 @@ bool sendMessageThroughUDP(const char param[STDSTRINGLEN])
 	  return 0;
     }
 
-    }
 }
 
 bool sendMessageThroughUDP_noanswer(const char param[STDSTRINGLEN])
@@ -1043,7 +1056,7 @@ struct Sensordata{
 } sensorbuffer;
 
 
-void safe_sens_value(float weight1, float weight2, float temp, float volt, int8_t signal, long epochtime){
+void save_sens_value(float weight1, float weight2, float temp, float volt, int8_t signal, long epochtime){
 	
 	sensorbuffer.pointer++;
 	if(sensorbuffer.pointer == SENSOR_BUFFER_LEN){

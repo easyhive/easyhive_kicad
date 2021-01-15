@@ -17,6 +17,7 @@ extern int BoardID;
 extern int datalogtime;
 extern int datasendtime;
 int loopcounter;
+int sendcounter;
 
 extern Sodaq_nbIOT nbiot;
 // Server variables
@@ -31,9 +32,8 @@ uint8_t BER;
 
 
 // only for debugging reasons:
-unsigned long starttime;
 extern int lengthSent;
-extern size_t size;
+extern size_t sizeStrBuffer;
 
 /*
    The setup function. We only start the sensors here and initialize the board state
@@ -45,8 +45,7 @@ extern size_t size;
 
 void setup(void)
 {
-  starttime = millis();
-  
+  sendcounter = 0;
   loopcounter = 0;
   // play_rtttl(startup);
   tone(BUZZER, 3950);
@@ -113,8 +112,6 @@ void setup(void)
 
   if (!nbiot.connect(apn, cdp, forceOperator, 8)) {
     DEBUG_STREAM.println("Failed to connect to the modem!");
-
-    //Neustart Befehl für SARA-Modul?
   }
 
   // check Signal quality
@@ -142,14 +139,13 @@ void setup(void)
    Main function, get and show the temperature, weight and sleep, send data via NB-IoT
 */
 void loop(void){
-
   unsigned long loopstarttime = millis();
   loopcounter++;
 
-  SerialUSB.println("==============================================");
-  SerialUSB.print("Free RAM@start loop ");
+  //SerialUSB.println("==============================================");
+  //SerialUSB.print("Free RAM@start loop ");
   int freemem = freeMemory();
-  SerialUSB.println(freemem);
+  //SerialUSB.println(freemem);
 
   // start loadcellstuff
   digitalWrite(LC_ON, HIGH);
@@ -210,8 +206,9 @@ void loop(void){
   // [FLOAT], [FLOAT], [FLOAT], [FLOAT], [INT8_T], [INTEGER], [ULONG]
   // [WEIGHT1],[WEIGHT2],[TEMP],[VOLT],[SIGNALQUALITY],[BOARDID],[Package/EPOCH]
 
-  safe_sens_value(weight_val1, weight_val2, temp_val, VOLT, SIGNAL, epochtime );
-
+  save_sens_value(weight_val1, weight_val2, temp_val, VOLT, SIGNAL, epochtime );
+  sendcounter++; 
+  
   // String msg = String(weight_val1) + "," + String(weight_val2) + "," + String(temp_val) + "," + String(VOLT) + "," + String(SIGNAL) + "," + String(BoardID) + "," + String(package) ;
 
   //float w_calib;
@@ -220,22 +217,16 @@ void loop(void){
   //SerialUSB.println(w_calib);
   //SerialUSB.println(w_offset);
 
-  bool loopreset; 
-  
   if (loopcounter >= datasendtime / datalogtime) {
-    if (!nbiot.isConnected()) {
-      if (!nbiot.connect(apn, cdp, forceOperator, 8)) {
-        DEBUG_STREAM.println("Failed to connect to the modem and/or network!");
-      }
-    }
-    else {
-      //loopcounter init 0, every void loop +1
+    // if connection to nbIoT exists or can be established
+    if (nbiot.isConnected() || nbiot.connect(apn, cdp, forceOperator, 8)) {
+      
       //FIFO - first in first out 
-      while (loopcounter > 0) {
-       if (loopcounter > SENSOR_BUFFER_LEN) {
-        loopcounter = SENSOR_BUFFER_LEN;
+      while (sendcounter > 0) {
+       if (sendcounter > SENSOR_BUFFER_LEN) {
+         sendcounter = SENSOR_BUFFER_LEN;   // we have only stored SENSOR_BUFFER_LEN amount of data in the buffer.
        }
-        // SENSOR_BUFFER_LEN is defined in easyhive.h (50)
+        // SENSOR_BUFFER_LEN is defined in easyhive.h
         float weight1 = 0;
         float weight2 = 0;
         float temp = 0;
@@ -243,9 +234,10 @@ void loop(void){
         int8_t csq = 0;
         long epoch = 0;
       
-        int pointer_pos = get_sens_pointer(-(loopcounter-1)); // bei loopcounter 1 = Offset 0
+        int pointer_pos = get_sens_pointer(-(sendcounter-1)); // with sendcounter 1 = Offset 0
         read_sens_value(&weight1, &weight2, &temp, &volt, &csq, &epoch, pointer_pos);
-
+        SerialUSB.print("sendcounter: ");
+        SerialUSB.println(sendcounter);
 
         SerialUSB.print("loopcounter: ");
         SerialUSB.println(loopcounter);
@@ -259,16 +251,12 @@ void loop(void){
         
         // changed only for debugging reasons
         // pointer_pos 
-        // uptime = how long has the scale not been turned off?
-        // i = how ofter through the loop
+        // sendcounter: how often was it not possbile to send?
         // freemem: free memory
-        unsigned long uptime = millis()-starttime;
-        String msg = String(pointer_pos) + "," + String(size) + "," + String(loopcounter) + "," + String(lengthSent) + "," + String(csq) + "," + String(BoardID) + "," + String(epoch) ;
+        String msg = String(pointer_pos) + "," + String(sendcounter) + "," + String(sizeStrBuffer) + "," + String(lengthSent) + "," + String(csq) + "," + String(freemem) + "," + String(epoch) ;
 
         SerialUSB.print("manipulated String msg: ");
         SerialUSB.println(msg);       
-        SerialUSB.print("uptime: ");
-        SerialUSB.println(uptime);
 
         // SerialUSB.print("old String: ");
         // SerialUSB.println(msg);
@@ -276,48 +264,43 @@ void loop(void){
         // try to send the message.
         int success = sendMessageThroughUDP(msg.c_str());
 
-        SerialUSB.println("success of sending message through UDP: ");
+        SerialUSB.print("success of sending message through UDP: ");
         SerialUSB.println(success);
 
         // if sending data to the server was successfull -> success = 1
         if(success){
-          sodaq_wdt_safe_delay(20);
-          SerialUSB.println("Message was sent. loopcounter -1.");
-          if(loopcounter>1){
-            pointer_pos = get_sens_pointer(-(loopcounter-3)); // bei loopcounter 1 = Offset -2
-            read_sens_value(&weight1, &weight2, &temp, &volt, &csq, &epoch, pointer_pos);
-            String msg = String(pointer_pos) + "," + String(uptime) + "," + String(loopcounter) + "," + String(freemem) + "," + String(csq) + "," + String(BoardID) + "," + String(epoch) ;
-            sendMessageThroughUDP(msg.c_str());
-          }
-          loopcounter --; 
+          //delay(20);
+          //SerialUSB.println("Message was sent. sendcounter -1.");
+          sendcounter --; 
         }
         // else if sending data to the server was not possible -> success = 0
         else{
-         SerialUSB.println("Message could not be sent. Here we want to reboot SARA Modul and leave the loop without touching loopcounter");
+         //SerialUSB.println("Message could not be sent. Reboot SARA Modul and leave loop");
          nbiot.connect(apn, cdp, forceOperator, 8);
          break; // leave for loop. Sleep and try to send the data next time.
-        }   
+        }  
       } // end of while loop
-    } // end of else (nbiot is connected)
+      loopcounter=0; 
+    } // end of if (nbiot is connected)
+    else {
+      DEBUG_STREAM.println("Failed to connect to the modem and/or network!");
+    }
   } // end of: if (loopcounter >= datasendtime / datalogtime)
 
+/*
   else {  // loopcounter < datasendtime/datalogtime
     // if data is measured more often then sent, the data is stored in the sensobuffer arrays
-
     //SerialUSB.print("logging data...");
-
     float weight1 = 0;
     float weight2 = 0;
     float temp = 0;
     float volt = 0;
     int8_t csq = 0;
     long epoch = 0;
-
     int pointer_pos = get_sens_pointer(0);
     read_sens_value(&weight1, &weight2, &temp, &volt, &csq, &epoch, pointer_pos);
-
   } // end of else (loopcounter < datasendtime/datalogtime)
-
+*/
   
   //Stop LoadecellStuff
   digitalWrite(LC_ON, LOW);
