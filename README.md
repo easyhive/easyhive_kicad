@@ -1,5 +1,5 @@
 # EasyHive_M0
-M0-Board Code (Arduino C++) and Hardware Files V1.3
+M0-Board Code (Arduino C++)
 
 This Board is designed for the purpose of remote and off-grid temperature and weight measurements.
 
