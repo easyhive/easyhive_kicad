@@ -2,7 +2,7 @@
 <export version="D">
   <design>
     <source>/home/easy/Documents/GitHub/easyhive_kicad/V1.5/easyhive.sch</source>
-    <date>So 17 Jan 2021 22:32:20 CET</date>
+    <date>Mo 18 Jan 2021 00:11:20 CET</date>
     <tool>Eeschema 5.1.8+dfsg1-1~bpo10+1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -883,7 +883,7 @@
     </comp>
     <comp ref="JP4">
       <value>AUX</value>
-      <footprint>easyhive:1X02_2MM_Pad_only</footprint>
+      <footprint>easyhive:1X02_2MM_klein</footprint>
       <fields>
         <field name="Description">in Stueckliste loeschen</field>
       </fields>
@@ -893,7 +893,7 @@
     </comp>
     <comp ref="U2">
       <value>BC66</value>
-      <footprint>RF_GSM:Quectel_BC66</footprint>
+      <footprint>easyhive:Quectel_BC66</footprint>
       <datasheet>https://www.quectel.com/UploadImage/Downlad/Quectel_BC66_Hardware_Design_V1.1.pdf</datasheet>
       <libsource lib="quectel" part="BC66" description="Quectel NB-IoT Global, AT Command Set"/>
       <sheetpath names="/" tstamps="/"/>
