@@ -207,7 +207,7 @@ ENDDEF
 #
 # easyhive_DINA3_L
 #
-DEF ~easyhive_DINA3_L #FRAME 0 40 Y Y 2 L N
+DEF easyhive_DINA3_L #FRAME 0 40 Y Y 2 L N
 F0 "#FRAME" 0 0 50 H I C CNN
 F1 "easyhive_DINA3_L" 0 0 50 H I C CNN
 F2 "" 0 0 50 H I C CNN
@@ -335,25 +335,6 @@ F3 "" 0 0 50 H I C CNN
 DRAW
 P 2 1 0 0 -75 0 75 0 N
 X GND 1 0 100 100 D 0 0 1 0 W
-ENDDRAW
-ENDDEF
-#
-# easyhive_M02-JST-2MM-SMT
-#
-DEF easyhive_M02-JST-2MM-SMT JP 0 40 Y Y 1 L N
-F0 "JP" -100 230 59 H V L BNN
-F1 "easyhive_M02-JST-2MM-SMT" -100 -200 59 H V L BNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-DRAW
-P 2 1 0 0 -100 200 -100 -100 N
-P 2 1 0 0 -100 200 150 200 N
-P 2 1 0 0 50 0 100 0 N
-P 2 1 0 0 50 100 100 100 N
-P 2 1 0 0 150 -100 -100 -100 N
-P 2 1 0 0 150 -100 150 200 N
-X 2 1 300 100 200 L 50 0 1 0 P
-X 1 2 300 0 200 L 50 0 1 0 P
 ENDDRAW
 ENDDEF
 #
@@ -541,7 +522,7 @@ ENDDEF
 #
 # easyhive_PKMCS
 #
-DEF ~easyhive_PKMCS P 0 40 Y Y 1 L N
+DEF easyhive_PKMCS P 0 40 Y Y 1 L N
 F0 "P" 0 0 50 H I C CNN
 F1 "easyhive_PKMCS" 0 0 50 H I C CNN
 F2 "" 0 0 50 H I C CNN
@@ -661,7 +642,7 @@ ENDDEF
 #
 # easyhive_TPTP08R
 #
-DEF ~easyhive_TPTP08R TP 0 40 Y Y 1 L N
+DEF easyhive_TPTP08R TP 0 40 Y Y 1 L N
 F0 "TP" -50 50 59 H V L BNN
 F1 "easyhive_TPTP08R" 0 0 50 H I C CNN
 F2 "" 0 0 50 H I C CNN
@@ -678,7 +659,7 @@ ENDDEF
 #
 # easyhive_U.FL
 #
-DEF ~easyhive_U.FL J 0 40 Y Y 1 L N
+DEF easyhive_U.FL J 0 40 Y Y 1 L N
 F0 "J" -150 160 59 H V L BNN
 F1 "easyhive_U.FL" 0 0 50 H I C CNN
 F2 "" 0 0 50 H I C CNN
