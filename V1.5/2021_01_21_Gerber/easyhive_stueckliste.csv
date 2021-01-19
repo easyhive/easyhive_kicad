@@ -1,8 +1,8 @@
 Source:,~/easyhive_kicad/V1.5/easyhive.sch,,,,,
-Date:,Mo 18 Jan 2021 00:11:20 CET,,,,,
+Date:,Di 19 Jan 2021 23:46:46 CET,,,,,
 Tool:,Eeschema 5.1.8+dfsg1-1~bpo10+1,,,,,
 Generator:,/usr/share/kicad/plugins/easyhive_bom.py,,,,,
-Component Count:,85,,,,,
+Component Count:,86,,,,,
 Ref,Qnty,Value,Package,MPN,Manufacturer,Description
 "C1, C5, C6, C7, C14, C15, C24, C28, ",8,100n,C0402,,,
 "C2, C11, C30, C31, C32, ",5,1u,C0402,,,
@@ -36,7 +36,7 @@ Ref,Qnty,Value,Package,MPN,Manufacturer,Description
 "R3, R22, R23, R24, ",4,0R,C0402,,,
 "R4, ",1,1k18,C0402,,,
 "R5, ",1,680R,C0402,,,
-"R6, ",1,10K,C0402,,,
+"R6, R10, ",2,10K,C0402,,,
 "R7, R8, R9, ",3,22R,C0402,,,
 "R13, R14, ",2,2k,C0402,,,
 "R15, ",1,NTC 103AT,C0402, ABNTC-0402-103J-4050F-T ,Abracon,auch anderer Hersteller moeglich
