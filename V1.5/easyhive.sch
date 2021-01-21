@@ -3091,7 +3091,7 @@ Wire Notes Line
 	8850 7100 13000 7100
 Wire Notes Line
 	13000 5700 13000 9850
-Text Notes 5150 10050 0    98   ~ 0
+Text Notes 4800 10000 0    98   ~ 0
 Level Shifter 3.3V - 1.8V
 Wire Notes Line
 	8850 550  8850 7100
@@ -3281,6 +3281,7 @@ F 0 "U2" H 7950 7450 50  0000 C CNN
 F 1 "BC66" H 8000 7350 50  0000 C CNN
 F 2 "easyhive:Quectel_BC66" H 8200 7450 50  0001 C CNN
 F 3 "https://www.quectel.com/UploadImage/Downlad/Quectel_BC66_Hardware_Design_V1.1.pdf" H 9350 7500 50  0001 C CNN
+F 4 "Quectel" H 7650 8500 50  0001 C CNN "Manufacturer"
 	1    7650 8500
 	1    0    0    -1  
 $EndComp
@@ -3342,7 +3343,7 @@ L easyhive:CAPACITOR-0402 C22
 U 1 1 605188FF
 P 10650 7900
 F 0 "C22" H 10710 7815 59  0000 L BNN
-F 1 "100nF" H 10710 7915 59  0000 L BNN
+F 1 "100n" H 10710 7915 59  0000 L BNN
 F 2 "easyhive:C0402" H 10650 7900 50  0001 C CNN
 F 3 "" H 10650 7900 50  0001 C CNN
 	1    10650 7900

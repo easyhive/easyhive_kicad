@@ -2,7 +2,7 @@
 <export version="D">
   <design>
     <source>/home/easy/Documents/GitHub/easyhive_kicad/V1.5/easyhive.sch</source>
-    <date>Di 19 Jan 2021 23:46:46 CET</date>
+    <date>Do 21 Jan 2021 20:41:31 CET</date>
     <tool>Eeschema 5.1.8+dfsg1-1~bpo10+1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -895,6 +895,9 @@
       <value>BC66</value>
       <footprint>easyhive:Quectel_BC66</footprint>
       <datasheet>https://www.quectel.com/UploadImage/Downlad/Quectel_BC66_Hardware_Design_V1.1.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Quectel</field>
+      </fields>
       <libsource lib="quectel" part="BC66" description="Quectel NB-IoT Global, AT Command Set"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>601D979A</tstamp>
@@ -921,7 +924,7 @@
       <tstamp>6039F914</tstamp>
     </comp>
     <comp ref="C22">
-      <value>100nF</value>
+      <value>100n</value>
       <footprint>easyhive:C0402</footprint>
       <libsource lib="easyhive" part="CAPACITOR-0402" description=""/>
       <sheetpath names="/" tstamps="/"/>
