@@ -1,0 +1,47 @@
+Source:,~/easyhive_kicad/V1.5/easyhive.sch,,,,,
+Date:,Do 21 Jan 2021 20:47:29 CET,,,,,
+Tool:,Eeschema 5.1.8+dfsg1-1~bpo10+1,,,,,
+Generator:,/usr/share/kicad/plugins/easyhive_bom.py,,,,,
+Component Count:,83,,,,,
+Ref,Qnty,Value,Package,MPN,Manufacturer,Description
+"C1, C5, C6, C7, C14, C15, C22, C24, C28, ",9,100n,C0402,,,
+"C2, C11, C30, C31, C32, ",5,1u,C0402,,,
+"C3, C4, C26, ",3,15p,C0402,,,
+"C8, C9, C16, C17, ",4,10u,C0402,,,
+"C10, ",1,100p,C0402,,,
+"C12, C13, C23, ",3,4u7,C0402,,,
+"C18, C19, C20, C21, ",4,47p,C0402,,,
+"C25, ",1,56p,C0402,,,
+"C27, ",1,10n,C0402,,,
+"C29, ",1,100u,1206,GRM31CR60J107ME39L,Murata,oder Tantal T490A107M006ATE800
+"D1, D2, ",2,MBR0520LT,SOD123,MBR0520LT,ON Semiconductor,auch anderer Hersteller moeglich
+"D4, D5, D6, D7, D8, D9, D10, D11, D12, D13, D14, ",11,PESD0402-140,0402-TVS,PESD0402-140,Littelfuse,auch anderer Hersteller moeglich
+"F1, ",1,6V/0.5A,1206,0ZCJ0050FF2G,Bel Fuse Inc,auch anderer Hersteller moeglich
+"IC1, ",1,ATSAMD21G,TQFP48,TSAMD21G18A-AUT,Microchip Technology,
+"IC2, ",1,BQ2407X,VQFN16,BQ24072RGTT ,TI,
+"IC3, ",1,ADS1232,TSSOP24,ADS1232IPWR,TI,
+"IC4, ",1,DS18B20U,UMAX8,DS18B20U+,Maxim Integrated,
+"IC5, ",1,XC6220B331,SOT25,XC6220B331MR-G,Torex Semiconductor,
+"IC6, ",1,SARA-N310,SARA-N3,Sara N310,Ublox,wird von easyhive beigestellt
+"IC7, ",1,TPS22919,sot-sc70-6,TPS22919DCKR,TI,
+"J1, ",1,U.FL,U.FL,  U.FL-R-SMT-1(01) ,Hirose,
+"J2, ",1,U.FL(2),U.FL,  U.FL-R-SMT-1(01) ,Hirose,nicht bestuecken
+"JP3, ",1,JST PH,JST_PH_B10B-PH-SM4-TB_1x10-1MP_P2.00mm_Vertical,PH_B10B-PH-SM4-TB,JST,
+"K1, ",1,693043020611,693043020611,693043020611,WURTH,
+"L1, L2, ",2,SM-1206,SM-1206,742792141,WURTH,auch anderer Hersteller moeglich
+"P1, ",1,PKMCS,PKMCS_BUZZER,PKMCS0909E4000-R1 ,Murata,
+"Q1, ",1,32768 Hz,FC135,,,
+"Q2, Q3, ",2,DTC123JET1G,SC75_SOT416,DTC123JET1G,ON Semiconductor,auch anderer Hersteller moeglich
+"R1, ",1,330,C0402,,,
+"R2, ",1,2k2,C0402,,,
+"R3, R11, R12, R21, R22, R23, R24, ",7,0R,C0402,,,
+"R4, ",1,1k18,C0402,,,
+"R5, ",1,680R,C0402,,,
+"R13, R14, ",2,2k,C0402,,,
+"R15, ",1,NTC 103AT,C0402, ABNTC-0402-103J-4050F-T ,Abracon,auch anderer Hersteller moeglich
+"R16, ",1,4M7,C0402,,,
+"R17, ",1,10M,C0402,,,
+"R18, ",1,4k7,C0402,,,
+"R25, ",1,1M,C0402,,,
+"U1, ",1,SN74AVC4T774PWG4,PW16,SN74AVC4T774PWG4,TI,
+"X1, ",1,USB_MICRO_SHIELD,USBMICRO,10118193-0001LF,Amphenol ICC,
