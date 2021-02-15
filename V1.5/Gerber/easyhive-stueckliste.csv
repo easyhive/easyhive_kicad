@@ -1,8 +1,8 @@
-Source:,~/easyhive_kicad/V1.5/easyhive.sch,,,,,
-Date:,Do 21 Jan 2021 20:47:29 CET,,,,,
+Source:,~/V1.5/easyhive.sch,,,,,
+Date:,Mo 15 Feb 2021 19:10:02 CET,,,,,
 Tool:,Eeschema 5.1.8+dfsg1-1~bpo10+1,,,,,
 Generator:,/usr/share/kicad/plugins/easyhive_bom.py,,,,,
-Component Count:,83,,,,,
+Component Count:,85,,,,,
 Ref,Qnty,Value,Package,MPN,Manufacturer,Description
 "C1, C5, C6, C7, C14, C15, C22, C24, C28, ",9,100n,C0402,,,
 "C2, C11, C30, C31, C32, ",5,1u,C0402,,,
@@ -14,7 +14,7 @@ Ref,Qnty,Value,Package,MPN,Manufacturer,Description
 "C25, ",1,56p,C0402,,,
 "C27, ",1,10n,C0402,,,
 "C29, ",1,100u,1206,GRM31CR60J107ME39L,Murata,oder Tantal T490A107M006ATE800
-"D1, D2, ",2,MBR0520LT,SOD123,MBR0520LT,ON Semiconductor,auch anderer Hersteller moeglich
+"D1, D2, ",2,MBR0520LT,SOD-123,MBR0520LT,ON Semiconductor,auch anderer Hersteller moeglich
 "D4, D5, D6, D7, D8, D9, D10, D11, D12, D13, D14, ",11,PESD0402-140,0402-TVS,PESD0402-140,Littelfuse,auch anderer Hersteller moeglich
 "F1, ",1,6V/0.5A,1206,0ZCJ0050FF2G,Bel Fuse Inc,auch anderer Hersteller moeglich
 "IC1, ",1,ATSAMD21G,TQFP48,TSAMD21G18A-AUT,Microchip Technology,
@@ -34,7 +34,7 @@ Ref,Qnty,Value,Package,MPN,Manufacturer,Description
 "Q2, Q3, ",2,DTC123JET1G,SC75_SOT416,DTC123JET1G,ON Semiconductor,auch anderer Hersteller moeglich
 "R1, ",1,330,C0402,,,
 "R2, ",1,2k2,C0402,,,
-"R3, R11, R12, R21, R22, R23, R24, ",7,0R,C0402,,,
+"R3, R6, R7, R11, R12, R21, R22, R23, R24, ",9,0R,C0402,,,
 "R4, ",1,1k18,C0402,,,
 "R5, ",1,680R,C0402,,,
 "R13, R14, ",2,2k,C0402,,,

@@ -197,12 +197,8 @@ Text Label 4200 7800 0    70   ~ 0
 TEMP_EN
 Text Label 12900 2250 0    70   ~ 0
 I2S_SD
-Text Label 12900 2950 0    70   ~ 0
-SARA_CTS_3V3
 Text Label 12900 3250 0    70   ~ 0
 SARA_1V8_ENABLE
-Text Label 12900 3050 0    70   ~ 0
-SARA_RTS_3V3
 Text Label 14900 7000 2    70   ~ 0
 DS_DATA
 Text Label 12900 4150 0    70   ~ 0
@@ -219,14 +215,6 @@ Text Label 8700 9100 0    70   ~ 0
 ANT
 Text Label 8700 9200 0    70   ~ 0
 ANT_DET
-Text Label 6850 7950 1    70   ~ 0
-SARA_TX_1V8
-Text Label 12900 2750 0    70   ~ 0
-SARA_RX_3V3
-Text Label 6750 8050 1    70   ~ 0
-SARA_RX_1V8
-Text Label 12900 2850 0    70   ~ 0
-SARA_TX_3V3
 Text Label 6150 9650 0    70   ~ 0
 SARA_SDA
 Text Label 6150 9750 0    70   ~ 0
@@ -575,34 +563,6 @@ F 2 "" H 2900 12200 50  0001 C CNN
 F 3 "" H 2900 12200 50  0001 C CNN
 	1    2900 12200
 	0    -1   -1   0   
-$EndComp
-$Comp
-L easyhive:MBR0520LT D1
-U 1 1 8D141E84
-P 3600 2200
-F 0 "D1" H 3700 2219 59  0000 L BNN
-F 1 "MBR0520LT" H 3700 2109 59  0000 L BNN
-F 2 "easyhive:SOD123" H 3600 2200 50  0001 C CNN
-F 3 "" H 3600 2200 50  0001 C CNN
-F 4 "auch anderer Hersteller moeglich" H 3600 2200 50  0001 C CNN "Description"
-F 5 "MBR0520LT" H 3600 2200 50  0001 C CNN "MPN"
-F 6 "ON Semiconductor" H 3600 2200 50  0001 C CNN "Manufacturer"
-	1    3600 2200
-	1    0    0    -1  
-$EndComp
-$Comp
-L easyhive:MBR0520LT D2
-U 1 1 20478EC3
-P 3600 2900
-F 0 "D2" H 3700 2919 59  0000 L BNN
-F 1 "MBR0520LT" H 3700 2809 59  0000 L BNN
-F 2 "easyhive:SOD123" H 3600 2900 50  0001 C CNN
-F 3 "" H 3600 2900 50  0001 C CNN
-F 4 "auch anderer Hersteller moeglich" H 3600 2900 50  0001 C CNN "Description"
-F 5 "MBR0520LT" H 3600 2900 50  0001 C CNN "MPN"
-F 6 "ON Semiconductor" H 3600 2900 50  0001 C CNN "Manufacturer"
-	1    3600 2900
-	1    0    0    -1  
 $EndComp
 $Comp
 L easyhive:CAPACITOR-0402 C11
@@ -2584,8 +2544,6 @@ Wire Wire Line
 Connection ~ 9200 2050
 Connection ~ 10700 2050
 Wire Wire Line
-	3700 2200 4300 2200
-Wire Wire Line
 	4300 2200 4700 2200
 Wire Wire Line
 	4700 2200 4700 2400
@@ -2595,10 +2553,7 @@ Wire Wire Line
 	4300 2900 4300 2200
 Wire Wire Line
 	4900 2200 4700 2200
-Connection ~ 4300 2200
 Connection ~ 4700 2200
-Wire Wire Line
-	3200 2200 3500 2200
 Wire Wire Line
 	4500 1500 4500 3000
 Wire Wire Line
@@ -3575,9 +3530,80 @@ F 3 "" H 6650 7200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6850 8050 6750 8050
-Wire Wire Line
 	6700 8200 6850 8200
 Wire Wire Line
 	6700 8300 6850 8300
+$Comp
+L easyhive:RESISTOR-0402 R7
+U 1 1 6035F871
+P 6850 7650
+F 0 "R7" H 6700 7709 59  0000 L BNN
+F 1 "0R" H 6900 7520 59  0000 L BNN
+F 2 "easyhive:C0402" H 6850 7650 50  0001 C CNN
+F 3 "" H 6850 7650 50  0001 C CNN
+	1    6850 7650
+	0    1    1    0   
+$EndComp
+Connection ~ 4300 2200
+Wire Wire Line
+	3700 2200 4300 2200
+Wire Wire Line
+	3200 2200 3500 2200
+Wire Wire Line
+	6850 7850 6850 7950
+Wire Wire Line
+	6650 8050 6850 8050
+$Comp
+L easyhive:RESISTOR-0402 R6
+U 1 1 60361375
+P 6650 7800
+F 0 "R6" H 6500 7859 59  0000 L BNN
+F 1 "0R" H 6700 7670 59  0000 L BNN
+F 2 "easyhive:C0402" H 6650 7800 50  0001 C CNN
+F 3 "" H 6650 7800 50  0001 C CNN
+	1    6650 7800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6650 8000 6650 8050
+Text Label 6850 7450 2    70   ~ 0
+SARA_TX_1V8
+Text Label 6650 7600 2    70   ~ 0
+SARA_RX_1V8
+Text Label 12900 2750 0    70   ~ 0
+SARA_TX_3V3
+Text Label 12900 2850 0    70   ~ 0
+SARA_RX_3V3
+Text Label 12900 2950 0    70   ~ 0
+SARA_RTS_3V3
+Text Label 12900 3050 0    70   ~ 0
+SARA_CTS_3V3
+$Comp
+L easyhive:MBR0520LT D2
+U 1 1 20478EC3
+P 3600 2900
+F 0 "D2" H 3700 2919 59  0000 L BNN
+F 1 "MBR0520LT" H 3700 2809 59  0000 L BNN
+F 2 "easyhive:SOD123" H 3600 2900 50  0001 C CNN
+F 3 "" H 3600 2900 50  0001 C CNN
+F 4 "auch anderer Hersteller moeglich" H 3600 2900 50  0001 C CNN "Description"
+F 5 "MBR0520LT" H 3600 2900 50  0001 C CNN "MPN"
+F 6 "ON Semiconductor" H 3600 2900 50  0001 C CNN "Manufacturer"
+	1    3600 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L easyhive:MBR0520LT D1
+U 1 1 8D141E84
+P 3600 2200
+F 0 "D1" H 3700 2219 59  0000 L BNN
+F 1 "MBR0520LT" H 3700 2109 59  0000 L BNN
+F 2 "easyhive:SOD123" H 3600 2200 50  0001 C CNN
+F 3 "" H 3600 2200 50  0001 C CNN
+F 4 "auch anderer Hersteller moeglich" H 3600 2200 50  0001 C CNN "Description"
+F 5 "MBR0520LT" H 3600 2200 50  0001 C CNN "MPN"
+F 6 "ON Semiconductor" H 3600 2200 50  0001 C CNN "Manufacturer"
+	1    3600 2200
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
