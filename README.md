@@ -3,6 +3,7 @@ KiCAD Design Files for easyhive PCB
 
 1. Branch (master): Design with Nb-IoT Modul from ublox (SARA N310)
 2. Branch: Design with Nb-IoT Modul from Quectel (BC66 04 Std)
+3. Branch: (V1.4-ublox-N200) Design with Nb-IoT Modul from ublox (SARA N200)
 
 Notes for Generate the bom of material:
 1. copy file "easyhive_bom.py" to your local KiCad Plugin folder
