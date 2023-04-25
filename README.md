@@ -11,6 +11,7 @@ e.g. /usr/share/kicad/plugins
 3. Tools -> Generate Bill of Material: add a new plugin (choose easyhive_bom.py)
 4. Generate BOM! Path is your KiCad project directory
 
+!['easyhive PCB board version 1.5'](https://github.com/easyhive/easyhive_kicad/blob/v1.5-with-Quectel/PCB_BC66_1140x400.jpg)
 
 ### copyright
 Software: GPL 3.0 and following versions   
